@@ -8,21 +8,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> </title>
     </head>
-    
+
     <body>
         <h1>Contact us!</h1>
         <form method="post" action="">
         <input type="hidden" name="redirect" value="index.html">
-        <p><label>Name <input type="text" name="first_name" size="30" maxlength="30" required></label></p>
-        <p></p><label>Last Name <input type="text" name="last_name" size="30" maxlength="50" required></label></p>
-        <p><label>Email <input type="email" name="email" size="30" maxlength="60" required></label></p>
-        <p><label>I have read the terms and conditions<input type="checkbox" name="terms" value="terms_accepted"></label></p>
+        <p>
+            <label>Name <input type="text" name="first_name" size="30" maxlength="30" required></label>
+        </p>
+        <p>
+            <label>Last Name <input type="text" name="last_name" size="30" maxlength="50" required></label>
+        </p>
+        <p>
+            <label>Email <input type="email" name="email" size="30" maxlength="60" required></label>
+        </p>
+        <p>
+            <label>I have read the terms and conditions<input type="checkbox" name="terms" value="terms_accepted"></label>
+        </p>
         <textarea name="msg_content" minlength="10" maxlength="200" placeholder="Enter message here" rows="4" cols="36" required></textarea>
         <input type="reset" value="Reset">
         <input type="submit" value="Submit">
-
-
-            
+    
         </form>
     </body>
 </html>
