@@ -10,25 +10,38 @@
     </head>
 
     <body>
-        <h1>Contact us!</h1>
+        <h1>Skontaktuj się z nami!</h1>
         <form method="post" action="">
         <input type="hidden" name="redirect" value="index.html">
         <p>
-            <label>Name <input type="text" name="first_name" size="30" maxlength="30" required></label>
+            <label>Imie <input type="text" name="first_name" size="30" maxlength="30" required></label>
         </p>
         <p>
-            <label>Last Name <input type="text" name="last_name" size="30" maxlength="50" required></label>
+            <label>Nazwisko <input type="text" name="last_name" size="30" maxlength="50" required></label>
         </p>
         <p>
             <label>Email <input type="email" name="email" size="30" maxlength="60" required></label>
         </p>
         <p>
-            <label>I have read the terms and conditions<input type="checkbox" name="terms" value="terms_accepted"></label>
+            <label>Wyrażam zgodę na przetwarzanie moich danych osobowych <input type="checkbox" name="terms" value="terms_accepted"></label>
         </p>
+        <label>Temat wiadomość
+            <select name="email_topic">
+                <option>Zakupy</option>
+                <option>Rabaty</option>
+                <option>Pomoc techniczna</option>
+                <option>Pomoc w wyborze sprzętu</option>                
+                <option>Reklamacja</option>                
+                <option>Skargi i uwagi</option>
+                <option>Inne</option>
+            </select>
+        </label>
+<br>
         <textarea name="msg_content" minlength="10" maxlength="200" placeholder="Enter message here" rows="4" cols="36" required></textarea>
+       <br>
         <input type="reset" value="Reset">
-        <input type="submit" value="Submit">
-    
+        <input type="submit" value="Wyślij">
+
         </form>
     </body>
 </html>

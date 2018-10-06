@@ -1,30 +1,149 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset = "utf-8">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="author" content="Rafał Lechowicz">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> </title>
-    </head>
+<head>
+    <meta charset = "utf-8">
+    <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe.">
+    <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe">
+    <meta name="author" content="Rafał Lechowicz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index_style.css">
+    <title>Komputerowy sklep internetowy</title>
+</head>
+<body>
+<header>
+    <img src="static/computer_logo_resized.png" alt="Symbol komputera">
+    <h1 id="inline">Z-KOM </h1>
+    <p><strong>Najlepszy</strong> sklep internetowy z częściami komputerowymi! Sprawdź <a href="#opinions">opinie naszych klientów!</a></p>
+</header>
+<nav>
+        <a href="form.html">Formularz kontaktowy</a>
+        <a href="contact.html">O firmie</a>
 
-    <body>
-        <h1>Teskst</h1>
-        <p>Witam na mojej stronie</p>
-        <a href="www.google.com">Google</a>
-        <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2014/09/google-logo.png" width="20%" height="20%" alt="google sign"/>
-        <ul>
-            <li>Basic</li>
-            <li>Pro</li>
-            <li>Advanced</li>
-        </ul>
-        <p>Click <a href="form.html">here</a> to register!</p>
-        <footer>
-            <p>Find us on social media 
-                <a href="http://www.facebook.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png" width="20%" height="20%" alt="facebook fanpage"/></a>
-            </p>
-            <p>&copyCopy rights reserved</p>
-        </footer>
-    </body>
+</nav>
+    <table border="3">
+        <caption>TOP 3 promocji tygodnia</caption>
+        <tr>
+            <th></th>
+            <th>Rodzaj</th>
+        </tr>
+        <tr>
+            <td rowspan="3">Procesory</td>
+            <th>
+                <strong>Intel i7-8700K 3.70GHz 12MB</strong> - <p id="best_price">2 379,00 </p>zł
+            </th>
+        </tr>
+        <tr>
+            <th>Intel i7-7700 3.60GHz 8MB BOX - 1 599,00 zł</th>
+        </tr>
+        <tr>
+            <th>AMD Ryzen 5 2400G 3,6GHz - 685,00 zł</th>
+        </tr>
+        <tr>
+            <th rowspan="3">Płyty główne</th>
+            <th>
+                <strong>MSI B360M PRO-VDH</strong> - <p id="best_price">329,00 </p>zł
+            </th>
+        </tr>
+        <tr>
+            <th>ASRock Z370 Pro4 - 439,00 zł</th>
+        </tr>
+        <tr>
+            <th>MSI Z370 TOMAHAWK - 615,00 zł</th>
+        </tr>
+    </table>
+    <aside>
+        <h4>Ankieta</h4>
+        <label>Czy poleciłbyś nasz sklep swoim znajomym?<br>
+            <p>Tak<input name="survey" type="radio" value="tak" checked></p>
+            <p>Nie<input name="survey" type="radio" value="nie"></p>
+        </label>
+    </aside>
+    <table border="1">
+        <caption>Zestawy komputerowe ~3000 zł</caption>
+        <thead>
+            <tr>
+                <th>
+                    <strong>Nazwa komponentu</strong>
+                </th>
+                <th colspan = "2">Komputery dla graczy</th>
+                <th colspan = "2">Komputery biurowe</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Procesor</td>
+                <td>Intel i3-8100 3.60GHz 6MB BOX</td>
+                <td>Intel I3 8100</td>
+                <td>AMD Ryzen 5 1600 /3.6GHz, AM4, BOX/</td>
+            </tr>
+            <tr> 
+                <td>Płyta główna</td>
+                <td>MSI B360M PRO-VDH</td>
+                <td>MSI B360M PRO VDH</td>
+                <td>MSI B350M PRO-VDH /AMD B350, DDR4, AM4/</td>
+            </tr>
+            <tr>                
+                <td>Pamięć RAM</td>
+                <td>Patriot 8GB 2666MHz Viper Elite Gray CL16</td>
+                <td>Crucial 2x4 GB 2400 MHz CL16</td>
+                <td>A-Data 16GB (2x8GB) 3000MHz CL16 XPG Z1</td>
+            </tr>
+            <tr>
+                <td>Karta graficzna</td>
+                <td>Inno3D GeForce GTX 1060 X2 6GB GDDR5</td>
+                <td>Gigabyte GTX 1060 6 GB WF2</td>
+                <td>Asus GeForce GT1030 2GB DDR5 64bit (1468/6000)</td>
+            </tr>
+            <tr>
+                <td>Dysk HDD</td>
+                <td>Toshiba 1TB 7200obr. 64MB P300 OEM</td>
+                <td>Toshiba P300 1 TB 7200 RPM SATA 600</td>
+                <td>GoodRam Iridium PRO 240GB SATA3 (560/530MB/s) MLC</td>
+            </tr>
+            <tr>
+                <td>Obudowa</td>
+                <td>SilentiumPC Regnum RG4T Pure Black</td>
+                <td>SPC Regnum RG4</td>
+                <td>Zalman R1 black USB3.0 (b/z)</td>
+            </tr>
+            <tr>
+                <td>Zasilacz</td>
+                <td>SilentiumPC 500W Vero L2 Bronze</td>
+                <td>SPC Vero L2 500W</td>
+                <td>XFX Core TS 450W 120mm Bronze</td>
+            </tr>
+            <tr>
+                <td><strong>Cena</strong></td>
+                <td><strong>2900 zł</strong></td>
+                <td><strong>3099 zł</strong></td>
+                <td><strong>3200 zł</strong></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Ocena redakcji</th>
+                <th>7/10</th>
+                <th>8/10</th>
+                <th>9/10</th>
+            </tr>
+        </tfoot>
+    </table>
+    <h1 id="opinions">Opinie klientów:</h1>
+    <ul>
+        <li>Marek Kowalski, Opole: &quot;Zdecydowanie polecam, niskie ceny, szybka dostawa.&quot;</li>
+        <li>Piotr Nowak, Warszawa: 
+            <ol>
+                <li>&quot;Nie znajdziecie lepszego, 10/10&quot;</li>
+                <li>&quot;Kolejne zakupy również udane, rzetelna obsługa, polecam&quot;</li>
+            </ol>
+    </ul>
+    
+    <footer>
+    <hr>
+        <p>Znajdź nas na facebooku! 
+            <a href="http://www.facebook.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png" width="3%" height="3%" alt="Fanpage sklepu na facebooku"/></a>
+        </p>
+        <p>&copy;Copy rights reserved</p>
+    </footer>
+</body>
 </html>

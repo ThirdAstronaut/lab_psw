@@ -1,0 +1,14 @@
+#best_price{
+    color:red;
+     display:inline;
+}
+
+#inline{
+    display:inline
+}
+
+aside{
+    width: 20%;
+    margin-left: 10pt;
+    float: right;
+}
