@@ -1,47 +1,75 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset = "utf-8">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="author" content="Rafał Lechowicz">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> </title>
-    </head>
+<html lang="pl-PL">
 
-    <body>
-        <h1>Skontaktuj się z nami!</h1>
-        <form method="post" action="">
-        <input type="hidden" name="redirect" value="index.html">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe.">
+    <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe">
+    <meta name="author" content="Rafał Lechowicz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/index_style.css">
+    <title>Komputerowy sklep internetowy</title>
+</head>
+
+<body>
+        <header>
+                <a href="index.html">
+                        <img src="images/computer_logo_resized.png" alt="Symbol komputera">
+                </a>
+                <h1 id="inline">Z-KOM</h1>
+                <p>
+                        <strong>Najlepszy</strong> sklep internetowy z częściami komputerowymi!</a>
+                </p>
+        </header>
+    <nav>
+        <a href="index.html">Strona główna</a>
+        <a href="about.html">O firmie</a>
+    </nav>
+    <h1>Skontaktuj się z nami!</h1>
+    <form method="post" action="index.html">
         <p>
-            <label>Imie <input type="text" name="first_name" size="30" maxlength="30" required></label>
+            <label>Email
+                <input type="email" name="email" size="30" maxlength="60" required>
+            </label>
         </p>
         <p>
-            <label>Nazwisko <input type="text" name="last_name" size="30" maxlength="50" required></label>
+            <label>Imie
+                <input type="text" name="first_name" size="30" maxlength="30" required>
+            </label>
         </p>
         <p>
-            <label>Email <input type="email" name="email" size="30" maxlength="60" required></label>
+            <label>Nazwisko
+                <input type="text" name="last_name" size="30" maxlength="50" required>
+            </label>
         </p>
+
         <p>
-            <label>Wyrażam zgodę na przetwarzanie moich danych osobowych <input type="checkbox" name="terms" value="terms_accepted"></label>
+            <label>Wyrażam zgodę na przetwarzanie moich danych osobowych
+                <input type="checkbox" name="terms" value="terms_accepted">
+            </label>
         </p>
         <label>Temat wiadomość
             <select name="email_topic">
-                <option>Zakupy</option>
-                <option>Rabaty</option>
-                <option>Pomoc techniczna</option>
-                <option>Pomoc w wyborze sprzętu</option>                
-                <option>Reklamacja</option>                
-                <option>Skargi i uwagi</option>
-                <option>Inne</option>
+                <optgroup label="Produkty">
+                    <option>Zakupy</option>
+                    <option>Rabaty</option>
+                    <option>Pomoc w wyborze sprzętu</option>
+                    <option>Reklamacja</option>
+                </optgroup>
+                <optgroup label="Inne">
+                    <option>Pomoc techniczna</option>
+                    <option>Skargi i uwagi</option>
+                    <option>Inne</option>
+                </optgroup>
             </select>
         </label>
-<br>
-        <textarea name="msg_content" minlength="10" maxlength="200" placeholder="Enter message here" rows="4" cols="36" required></textarea>
-       <br>
-        <input type="reset" value="Reset">
+        <br>
+        <textarea name="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4" cols="36" required></textarea>
+        <br>
         <input type="submit" value="Wyślij">
+        <input type="reset" value="Reset">
 
-        </form>
-    </body>
+    </form>
+</body>
+
 </html>
