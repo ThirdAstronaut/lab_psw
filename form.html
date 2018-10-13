@@ -8,19 +8,19 @@
     <meta name="author" content="Rafał Lechowicz">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
-    <title>Komputerowy sklep internetowy</title>
+    <title>Internetowy sklep komputerowy</title>
 </head>
 
 <body>
-        <header>
-                <a href="index.html">
-                        <img src="images/computer_logo_resized.png" alt="Symbol komputera">
-                </a>
-                <h1 id="inline">Z-KOM</h1>
-                <p>
-                        <strong>Najlepszy</strong> sklep internetowy z częściami komputerowymi!</a>
-                </p>
-        </header>
+    <header>
+        <a href="index.html">
+            <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left">
+        </a>
+        <h1>Z-KOM</h1>
+        <p>
+            <strong>Najlepszy</strong> sklep internetowy z częściami komputerowymi!</a>
+        </p>
+    </header>
     <nav>
         <a href="index.html">Strona główna</a>
         <a href="about.html">O firmie</a>
@@ -28,21 +28,45 @@
     <h1>Skontaktuj się z nami!</h1>
     <form method="post" action="index.html">
         <p>
-            <label>Email
-                <input type="email" name="email" size="30" maxlength="60" required>
-            </label>
-        </p>
-        <p>
             <label>Imie
-                <input type="text" name="first_name" size="30" maxlength="30" required>
+                <input type="text" name="first_name" size="30" maxlength="30" autofocus autocomplete="name">
             </label>
         </p>
         <p>
             <label>Nazwisko
-                <input type="text" name="last_name" size="30" maxlength="50" required>
+                <input type="text" name="last_name" size="30" maxlength="50" required autocomplete="family-name">
             </label>
         </p>
-
+        <p>
+            <label>Miesiąc urodzin
+                <input list="month_of_birth">
+                <datalist id="month_of_birth">
+                    <option value="1">
+                        <option value="2">
+                            <option value="3">
+                                <option value="4">
+                                    <option value="5">
+                                        <option value="6">
+                                            <option value="7">
+                                                <option value="8">
+                                                    <option value="9">
+                                                        <option value="10">
+                                                            <option value="11">
+                                                                <option value="12">
+                </datalist>
+            </label>
+        </p>
+        <p>
+            <label>Email
+                <input type="email" name="email" size="30" maxlength="60" required autocomplete="email">
+            </label>
+        </p>
+        <p>
+            <label>Telefon
+                <input type="tel" name="telephone" pattern="[\+]?[0-9]{9,11}" autocomplete="tel">
+                <!-- takie coś stworzyłem, nwm czy okej https://regex101.com/r/Jtg0zN/1 -->
+            </label>
+        </p>
         <p>
             <label>Wyrażam zgodę na przetwarzanie moich danych osobowych
                 <input type="checkbox" name="terms" value="terms_accepted">
@@ -64,12 +88,22 @@
             </select>
         </label>
         <br>
-        <textarea name="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4" cols="36" required></textarea>
+        <textarea name="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4" cols="36"></textarea>
         <br>
         <input type="submit" value="Wyślij">
         <input type="reset" value="Reset">
 
     </form>
+    <footer>
+        <hr>
+        <p>Znajdź nas na facebooku!
+            <a href="http://www.facebook.com/">
+                <img class="icon_index" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png"
+                    alt="Fanpage sklepu na facebooku" />
+            </a>
+        </p>
+        <p>&copy;Copy rights reserved</p>
+    </footer>
 </body>
 
 </html>
