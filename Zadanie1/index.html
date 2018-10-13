@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<title>Domowe zwierzaki - TITLE</title>
+
+<meta charset="UTF-8">
+<meta name="description" content="Zwierzaki, jakie mozemy znalezc w domu.">
+<meta name="keywords" content="zwierze,domowe,milusinskie,pies,kot,dom">
+</head>
+<body>
+
+
+<!--Grupa nagłówków -->
+  <header>
+    <h1><a href="index.html " rel="home">Domowe zwierzaki </a></h1>
+    <h2>Zaopiekuj się nimi, nawet gdy nie będziesz chciał.</h2>
+  </header>
+<!--Menu -->
+   <ul>
+      <li><a href="index.html">Główna</a></li>
+      <li><a href="kot.html">Kot</a>
+        <ul>
+          <li><a href="lew.html">Lew</a></li>
+          <li><a href="tygrys.html">Tygrys</a></li>
+        </ul>
+      </li>
+      <li><a href="pies.html">Pies</a></li>
+      <li><a href="mysz.html">Mysz</a></li>
+      <li><a href="szczur.html">Szczur</a></li>
+      <li><a href="#stopka">Stopka</a></li>
+   </ul>
+
+
+<!--Obrazek -->
+<p>Czas na Twoje domowe zwierzątko</p>
+         <picture>
+         <img src="domowy.jpg" alt="Domowy zwierzak">
+         </picture>
+
+<p>&Prime;Jak myśliwi dokarmiają zwierzynę,
+żeby ją przy okazji zabić, tak prawnicy hodują świat przestępczy.&Prime;</p>
+
+<!-- Wybór -->
+
+<h2>Trudna decyzja – jakie zwierzę wybrać?</h2>
+<p>Psy i koty żyją zwykle kilkanaście lat, zaś chomiki,
+ króliki, świnki morskie czy papużki faliste zaledwie kilka.
+  Dlatego warto się zastanowić, po co nam zwierzak,
+   czego tak naprawdę od niego oczekujemy?
+    Czy jesteśmy gotowi przyjąć na siebie obowiązek opieki nad nim,
+ jakim <b>budżetem</b> dysponujemy,
+  jakie mamy warunki mieszkaniowe i ile wolnego czasu.</p>
+
+<h2>Pies czy kot?</h2>
+<a href="kot.html"><img src="kot.jpg" alt="Kot" width="200"></a>
+<a href="pies.html"><img src="pies.jpeg" alt="Pies" width="200"></a>
+
+<!-- Formularz -->
+
+<form>
+  <p>Chcesz odpowiedzieć na kilka pytań?</p>
+ <label>Twoje imię <input type="text"></label><br>
+ <label>Coś o sobie <input type="text"></label><br>
+ <label>Twoje zainteresowania <input type="text"></label><br>
+ <p>Od ilu lat masz zwierzaka?</p>
+ <select name="zwierzak">
+		<option>Nie mam</option>
+		<option>Mniej niż 3</option>
+    <option>Między 3 a 5</option>
+		<option>Powyżej 5</option>
+	</select>
+  <br>
+ <label><input type="checkbox" checked> Potwierdzam, że lubię zwierzaki</label>
+  <p>Podaj zwierzaka, którego najbardziej lubisz</p>
+ <label><input type="radio" name="zwierze"> Pies </label>
+ <label><input type="radio" name="zwierze"> Kot </label>
+ <label><input type="radio" name="zwierze"> Mysz </label>
+ <label><input type="radio" name="zwierze"> Szczur </label>
+  <p>Opowiedz Twoje spostrzeżenia o naszej stronie!</p>
+  <textarea name="info" cols="80" maxlength="200"></textarea><br>
+ <input type="reset" value="Wyczyść Formularz" />
+ <input type="submit" value="Wyślij Formularz">
+</form>
+
+
+<!-- Mailto -->
+<br>
+<a href="mailto:ejemplo@gmail.com">Wyślij maila do opiekunów strony.</a>
+
+
+<!-- Odnośnik do pliku -->
+<p><a href="../zadanie1/kot.jpg" download="kot.jpg" target="_blank">Pobierz zdjęcie kota</a></p>
+<p><a href="../domowe.jpg" download="domowe.jpg" target="_blank">Pobierz zdjęcie domowego zwierzaka</a></p>
+
+
+<!-- Stopka całej strony -->
+<footer>
+<p id="stopka">Wszelkie prawa zastrzeżone. Kopiowanie bez zgody autora zabronione.</p>
+</footer>
+</body>
+</html>
