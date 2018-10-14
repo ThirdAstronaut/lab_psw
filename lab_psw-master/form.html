@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe.">
+    <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe">
+    <meta name="author" content="Rafał Lechowicz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/index_style.css">
+    <title>Internetowy sklep komputerowy</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left">
+        </a>
+        <h1>Z-KOM</h1>
+        <p>
+            <strong>Najlepszy</strong> sklep internetowy z częściami komputerowymi!</a>
+        </p>
+    </header>
+    <nav>
+        <a href="index.html">Strona główna</a>
+        <a href="about.html">O firmie</a>
+    </nav>
+    <aside>
+      <h3>Telefon: </h3>
+      <p>Zadzwoń - 123-345-567</p>
+    </aside>
+    <h1>Skontaktuj się z nami!</h1>
+    <form method="post" action="form_extra.html">
+        <p>
+            <label>Imie
+                <input type="text" name="first_name" size="30" maxlength="30" autofocus autocomplete="name">
+                (Ciąg znaków - max. 30, zaczynający się z wielkiej litery)
+            </label>
+        </p>
+        <p>
+            <label>Nazwisko
+                <input type="text" name="last_name" size="30" maxlength="50" required autocomplete="family-name">
+                (Ciąg znaków - max. 50, zaczynający się z wielkiej litery)
+            </label>
+        </p>
+        <p>
+            <label>Miesiąc urodzin
+                <input list="month_of_birth">
+                <datalist id="month_of_birth">
+                    <option value="1">
+                        <option value="2">
+                            <option value="3">
+                                <option value="4">
+                                    <option value="5">
+                                        <option value="6">
+                                            <option value="7">
+                                                <option value="8">
+                                                    <option value="9">
+                                                        <option value="10">
+                                                            <option value="11">
+                                                                <option value="12">
+                </datalist>
+                (Liczba całkowita - od 1 do 12)
+            </label>
+        </p>
+        <p>
+            <label>Email
+                <input type="email" name="email" size="30" maxlength="60" required autocomplete="email">
+                (Ciąg znaków - max. 60 ze znakiem @)
+            </label>
+        </p>
+        <p>
+            <label>Telefon
+                <input type="tel" name="telephone" pattern="[\+]?[0-9]{9,11}" autocomplete="tel">
+                (Ciąg o wzorcu: [\+]?[0-9]{9,11} )
+                <!-- takie coś stworzyłem, nwm czy okej https://regex101.com/r/Jtg0zN/1 jest raczej spoko, bo w książce od Nowaka jest podobnie-->
+            </label>
+        </p>
+        <p>
+            <label>Wyrażam zgodę na przetwarzanie moich danych osobowych
+                <input type="checkbox" name="terms" value="terms_accepted">
+                (Zaznaczenie pozwala pełnowymiarowe korzystanie z usług)
+            </label>
+        </p>
+        <label>Temat wiadomość
+            <select name="email_topic">
+                <optgroup label="Produkty">
+                    <option>Zakupy</option>
+                    <option>Rabaty</option>
+                    <option>Pomoc w wyborze sprzętu</option>
+                    <option>Reklamacja</option>
+                </optgroup>
+                <optgroup label="Inne">
+                    <option>Pomoc techniczna</option>
+                    <option>Skargi i uwagi</option>
+                    <option>Inne</option>
+                </optgroup>
+            </select>
+            (Wybór tematu z listy)
+        </label>
+        <br>
+        <textarea name="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4" cols="36"></textarea>
+        (Ciąg alfanumeryczny o maksymalnej liczbie znaków: 200)
+        <br>
+        <input type="submit" value="Wyślij">
+        <input type="reset" value="Reset">
+
+
+    </form>
+    <footer>
+      <details>
+        <hr>
+        <p>Znajdź nas na facebooku!
+            <a href="http://www.facebook.com/">
+                <img class="icon_index" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png"
+                    alt="Fanpage sklepu na facebooku" />
+            </a>
+        </p>
+        <summary>Copyright 2018</summary>
+        <p>&copy;Copy rights reserved</p>
+      </details>
+    </footer>
+</body>
+
+</html>
