@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe.">
     <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe">
-    <meta name="author" content="Rafał Lechowicz">
+    <meta name="author" content="Rafał Lechowicz, Jan Żyrek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
     <title>Internetowy sklep komputerowy</title>
@@ -24,23 +24,28 @@
     <nav>
         <a href="index.html">Strona główna</a>
         <a href="about.html">O firmie</a>
+        <a href="form_extra.html">Formularz zamówień</a>
     </nav>
-    <aside>
-      <h3>Telefon: </h3>
-      <p>Zadzwoń - 123-345-567</p>
+    <aside class="telephone">
+        <h3>Telefon: </h3>
+        <p>Zadzwoń - 123-345-567</p>
+
     </aside>
     <h1>Skontaktuj się z nami!</h1>
     <form method="post" action="form_extra.html">
         <p>
             <label>Imie
-                <input type="text" name="first_name" size="30" maxlength="30" autofocus autocomplete="name">
-                (Ciąg znaków - max. 30, zaczynający się z wielkiej litery)
+
+                <input type="text" name="first_name" size="30" maxlength="30" autofocus autocomplete="name"> (Ciąg znaków - max. 30
+                <!--, zaczynający się z wielkiej litery)-->
+
             </label>
         </p>
         <p>
             <label>Nazwisko
-                <input type="text" name="last_name" size="30" maxlength="50" required autocomplete="family-name">
-                (Ciąg znaków - max. 50, zaczynający się z wielkiej litery)
+                <input type="text" name="last_name" size="30" maxlength="50" required autocomplete="family-name"> (Ciąg znaków - max. 50)
+                <!--, zaczynający się z wielkiej litery)-->
+
             </label>
         </p>
         <p>
@@ -65,21 +70,23 @@
         </p>
         <p>
             <label>Email
-                <input type="email" name="email" size="30" maxlength="60" required autocomplete="email">
-                (Ciąg znaków - max. 60 ze znakiem @)
+
+                <input type="email" name="email" size="30" maxlength="60" required autocomplete="email"> (Ciąg znaków - max. 60 ze znakiem @)
+
             </label>
         </p>
         <p>
             <label>Telefon
-                <input type="tel" name="telephone" pattern="[\+]?[0-9]{9,11}" autocomplete="tel">
-                (Ciąg o wzorcu: [\+]?[0-9]{9,11} )
-                <!-- takie coś stworzyłem, nwm czy okej https://regex101.com/r/Jtg0zN/1 jest raczej spoko, bo w książce od Nowaka jest podobnie-->
+
+                <input type="tel" name="telephone" pattern="[\+]?[0-9]{9,11}" autocomplete="tel"> (Ciąg o wzorcu: [\+]?[0-9]{9,11})
+
             </label>
         </p>
         <p>
             <label>Wyrażam zgodę na przetwarzanie moich danych osobowych
-                <input type="checkbox" name="terms" value="terms_accepted">
-                (Zaznaczenie pozwala pełnowymiarowe korzystanie z usług)
+
+                <input type="checkbox" name="terms" value="terms_accepted"> (Zaznaczenie pozwala pełnowymiarowe korzystanie z usług)
+
             </label>
         </p>
         <label>Temat wiadomość
@@ -99,8 +106,8 @@
             (Wybór tematu z listy)
         </label>
         <br>
-        <textarea name="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4" cols="36"></textarea>
-        (Ciąg alfanumeryczny o maksymalnej liczbie znaków: 200)
+        <textarea name="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4" cols="36"></textarea> (Ciąg alfanumeryczny o maksymalnej liczbie znaków: 200)
+
         <br>
         <input type="submit" value="Wyślij">
         <input type="reset" value="Reset">

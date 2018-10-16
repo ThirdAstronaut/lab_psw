@@ -8,7 +8,17 @@
 }
 .nospace{
 }
-aside{
+.telephone{
+    float: right;
+    margin-right: 10pt;
+    border-color: rgb(238, 119, 8);
+    border-style:solid ; 
+    padding-left: 10pt;
+    padding-right: 10pt;
+   
+}
+
+.survey{
     border-color: blue;
     border-width: thin;
     border-style: solid; 
@@ -19,7 +29,6 @@ aside{
     padding-bottom: 10pt;
     float: right;
 }
-
 .discount_table_index, td {
     border: 1px solid black;
 }
