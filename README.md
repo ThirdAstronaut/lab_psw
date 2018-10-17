@@ -3,6 +3,7 @@
 + this will be highlighted in green
 - this will be highlighted in red
 ```
+<span style="color:blue">some *blue* text</span>.
 ```diff
 Podstawy programowania w języku CSS3 - cz. 1	  
 Działanie HTML i CSS należy sprawdzić na pięciu przeglądarkach: Chrome, Internet Explorer, Firefox, Opera, Safari.	  
