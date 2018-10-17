@@ -6,11 +6,13 @@ Można użyć kolorowania, ale wtedy tekst się rozjeżdża na szerokości i trz
 ```
 
 **Można wykreślać gotowe rzeczy przez** ~~tekst~~
+
+
 ~~Podstawy programowania w języku CSS3 - cz. 1~~
 Działanie HTML i CSS należy sprawdzić na pięciu przeglądarkach: Chrome, Internet Explorer, Firefox, Opera, Safari.	  
 Proszę utworzyć witrynę zawierającą kilka stron zgodnych z standardem HTML 5 z odwołaniem do w zewnętrznego arkusza stylów zgodnego z standardem CSS3.	  
 Wszystkie reguły CSS, z wyjątkiem punktu 2, powinny być umieszczone w zewnętrznym arkuszu stylów.	  
-1.	Strona startowa zawiera odnośniki do stron zawierających kolejno: kilka akapitów tekstu, listę odnośników, tabelę oraz formularz. Kodowanie wszystkich stron proszę ustawić jako utf-8. Każda strona, posiada własny, unikatowy tytuł oraz jest opatrzona meta danymi w szczególności opisem oraz słowami kluczowymi (na potrzeby pozycjonowania). ’
+~~1.	Strona startowa zawiera odnośniki do stron zawierających kolejno: kilka akapitów tekstu, listę odnośników, tabelę oraz formularz. Kodowanie wszystkich stron proszę ustawić jako utf-8. Każda strona, posiada własny, unikatowy tytuł oraz jest opatrzona meta danymi w szczególności opisem oraz słowami kluczowymi (na potrzeby pozycjonowania). ’~~
 2.	Zaprezentuje różne możliwości osadzania reguł CSS na stronie.’
 3.	Zaprezentuj praktyczne wykorzystanie różnych sposobów zmiany wielkości tekstu na stronie (em, px, pt, %)’
 4.	Zaprezentuj różne sposoby ustawienia tła strony - jego pozycji, powtarzalności, ograniczania (np. powtarzanie do połowy wysokości strony) i rozciągania (background-color, background-image, background-repeat, backgroundattachment, background-position, background)’
