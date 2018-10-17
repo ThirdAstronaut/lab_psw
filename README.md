@@ -3,7 +3,7 @@
 + this will be highlighted in green
 - this will be highlighted in red
 ```
-```html
+```css
 <span style="color:blue">some *blue* text</span>.
 
 Podstawy programowania w języku CSS3 - cz. 1	  
