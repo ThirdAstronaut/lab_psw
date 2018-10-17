@@ -6,7 +6,7 @@ Można użyć kolorowania, ale wtedy tekst się rozjeżdża na szerokości i trz
 ```
 
 **Można wykreślać gotowe rzeczy przez** ~~tekst~~
-~~Podstawy programowania w języku CSS3 - cz. 1	~~
+~~Podstawy programowania w języku CSS3 - cz. 1~~
 Działanie HTML i CSS należy sprawdzić na pięciu przeglądarkach: Chrome, Internet Explorer, Firefox, Opera, Safari.	  
 Proszę utworzyć witrynę zawierającą kilka stron zgodnych z standardem HTML 5 z odwołaniem do w zewnętrznego arkusza stylów zgodnego z standardem CSS3.	  
 Wszystkie reguły CSS, z wyjątkiem punktu 2, powinny być umieszczone w zewnętrznym arkuszu stylów.	  
