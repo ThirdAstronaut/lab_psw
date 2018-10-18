@@ -1,3 +1,7 @@
+body{
+    font-family: Lato;
+}
+
 .best_price{
     color:red;
     display:inline;
@@ -6,6 +10,7 @@
 .align_left{
     float:left;
 }
+
 
 .telephone{
     float: right;
@@ -40,4 +45,26 @@
 .icon_index{
     width:3%;
      height:3%;
+}
+
+
+/* unvisited link */
+a:link {
+    color: rgb(0, 132, 255);
+}
+
+
+/* mouse over link */
+a:hover {
+    color: rgb(255, 123, 0);
+}
+
+/* selected link */
+a:active {
+    color: rgb(245, 71, 2);
+}
+
+/* visited link */
+a:visited {
+    color: rgb(255, 38, 0);
 }
