@@ -10,31 +10,46 @@
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
     <title>Z-KOM - Centrum wiedzy</title>
 
-<style type="text/css">
-nav ul {display: none;
-list-style: none;
-margin: 0;
-/*padding: 4;   TODO z wicięciem czy bez*/
-}
-nav:hover ul{
-    display:block;
-}
-nav:hover ul li{
+    <!--zmiany kosmetyczne typu zaznaczenie -->
+    <style type="text/css">
+        nav ul {
+            display: none;
+            list-style: none;
+            margin: 0;
+            /*padding: 4;   TODO z wicięciem czy bez*/
+        }
+
+        nav:hover ul {
+            display: block;
+        }
+
+        .mark_li:hover {
+            background-color: burlywood;
+        }
+
+        nav ul li ul li {
+            display: none;
+            list-style: none;
+        }
+
+        nav ul li ul li:hover ul li {
+            display: block;
+        }
+
+        nav ul li:hover ul li {
+            display: block;
+        }
+
+        nav ul li ul li ul li {
+            display: none;
+            list-style: none;
+        }
+    </style>
+    <!-- po dodaniu wycofuje efekt rozwijania podkategori, od razu wszystko jest widoczne
+        nav:hover ul li{
   display: block;
-}
-nav ul li ul li:hover{
- background-color: aqua;   
-}
-nav ul li ul li{
-    display: none;
-list-style: none;  
-}
-
-nav ul li:hover ul li{
-    display:block;
-}
-
-</style>
+        }
+       -->
 </head>
 
 <body>
@@ -48,36 +63,54 @@ nav ul li:hover ul li{
             <strong>Najlepszy</strong> sklep internetowy z częściami komputerowymi! Sprawdź
             <a href="#opinions">opinie naszych klientów!</a>
         </p>
+        <nav>
+            <a href="index.html">Strona główna</a>
+            <a href="about.html">O firmie</a>
+            <a href="form.html">Formularz kontaktowy</a>
+            <a href="form_extra.html">Formularz szczegółowy</a>
+        </nav>
     </header>
-    <nav>Przeglądaj
+    <br>
+
+    <nav><span style="color:blue; font-size: 20pt">Przeglądaj</span>
         <ul>
             <li>Laptopy
                 <ul>
-                        <li> 
-                            <a href="index.html">Do gier</a>
-                            
-                        </li>
-
-                        <li> <a href="index.html">Do biura</a></li>
-                        <li> <a href="index.html">Do multimediów</a></li>
+                    <li>
+                        Do gier
+                        <ul>
+                            <li class="mark_li"><a href="https://szukamlapka.pl/ranking/laptopy-do-gier/do-3000-zl.html">Do
+                                    3000zł - szukamlapka.pl</a></li>
+                            <li class="mark_li"><a href="https://szukamlapka.pl/ranking/laptopy-do-gier/do-6000-zl.html">Do
+                                    6000zł - szukamlapka.pl</a></li>
+                        </ul>
+                    </li>
+                    <li class="mark_li"> <a href="https://szukamlapka.pl/laptopy/do-biura.html">Do biura -
+                            szukamlapka.pl</a></li>
+                    <li class="mark_li"> <a href="https://szukamlapka.pl/laptopy/do-internetu-i-filmow,dla-grafika.html">Do
+                            multimediów - szukamlapka.pl</a></li>
                 </ul>
             </li>
             <li>Komputery stacjonarne
-                    <ul>
-                            <li> <a href="index.html">Do gier</a></li>
-                            <li> <a href="index.html">Do biura</a></li>
-                            <li> <a href="index.html">Do multimediów</a></li>
-                    </ul>
-                </li>
-        
-        <li><a href="form.html">Formularz kontaktowy</a></li>
-            <li><a href="form_extra.html">Formularz szczegółowy</a></li>
+                <ul>
+                    <li class="mark_li"> <a href="https://www.morele.net/wiadomosc/ranking-komputerow-dla-graczy-2018-top-10-najlepszych-modeli/1942/">Do
+                            gier - ranking top10 morele.net</a></li>
+                    <li class="mark_li"> <a href="https://www.morele.net/wiadomosc/ranking-komputerow-do-biura-top-10-najlepszych-zestawow-komputerowych/5937/">Do
+                            biura - ranking top10 morele.net</a></li>
+                </ul>
+            </li>
+            <li>Konsole
+                <ul>
+                    <li class="mark_li"> <a href="https://www.morele.net/wiadomosc/wersje-xbox-one-jaka-wybrac-ktora-najlepsza-polecane-wersje/3595/">Xbox
+                            One - morele.net</a></li>
+                    <li class="mark_li"> <a href="https://www.morele.net/wiadomosc/playstation-4-jaka-wersje-wybrac-jaka-najlepsza-polecane-konsole/3601/">PlayStation
+                            4 - morele.net</a></li>
+                </ul>
+            </li>
         </ul>
-        
+
     </nav>
-   
-
-
+    <br>
     <footer>
         <details>
             <hr>
