@@ -11,6 +11,24 @@ body{
     float:left;
 }
 
+.banner{
+  display: block;
+  height: 500px;
+  background-image: url("../images/kot.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: lightgrey;
+}
+
+.text_banner{
+  text-align: center;
+  font-size: 45px;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: #660066;
+  padding-top: 200px;
+}
 
 .telephone{
     float: right;
@@ -79,6 +97,39 @@ body{
 
 .find_us mark{
   font-variant: small-caps;
+}
+
+/* Form main */
+
+.form_main{
+  display: inline-block;
+  height: 1.5em;
+  position: relative;
+  left: 1ex;
+  bottom: 1ex;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.text_main{
+  position: relative;
+  right: -1ex;
+  top: 1ex;
+}
+
+.submit_form_main, .reset_form_main{
+  position: relative;
+  top: 1ex;
+  left: 35ex;
+}
+
+.submit_form_main{
+  background-color: lime;
+}
+
+.reset_form_main{
+  background-color: magenta;
 }
 
 /* unvisited link */
