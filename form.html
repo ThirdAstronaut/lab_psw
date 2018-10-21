@@ -36,7 +36,7 @@
     <h1>Skontaktuj się z nami!</h1>
     <form method="post" action="form_extra.html">
         <p>
-            <label>Imie
+            <label class="form_main">Imie
 
                 <input type="text" name="first_name" size="30" maxlength="30" autofocus autocomplete="name"> (Ciąg
                 znaków - max. 30
@@ -45,7 +45,7 @@
             </label>
         </p>
         <p>
-            <label>Nazwisko
+            <label class="form_main">Nazwisko
                 <input type="text" name="last_name" size="30" maxlength="50" required autocomplete="family-name"> (Ciąg
                 znaków - max. 50)
                 <!--, zaczynający się z wielkiej litery)-->
@@ -53,7 +53,7 @@
             </label>
         </p>
         <p>
-            <label>Miesiąc urodzin
+            <label class="form_main">Miesiąc urodzin
                 <input list="month_of_birth">
                 <datalist id="month_of_birth">
                     <option value="1">
@@ -73,7 +73,7 @@
             </label>
         </p>
         <p>
-            <label>Email
+            <label class="form_main">Email
 
                 <input type="email" name="email" size="30" maxlength="60" required autocomplete="email"> (Ciąg znaków -
                 max. 60 ze znakiem @)
@@ -81,7 +81,7 @@
             </label>
         </p>
         <p>
-            <label>Telefon
+            <label class="form_main">Telefon
 
                 <input type="tel" name="telephone" pattern="[\+]?[0-9]{9,11}" autocomplete="tel"> (Ciąg o wzorcu:
                 [\+]?[0-9]{9,11})
@@ -89,14 +89,14 @@
             </label>
         </p>
         <p>
-            <label>Wyrażam zgodę na przetwarzanie moich danych osobowych
+            <label class="form_main">Wyrażam zgodę na przetwarzanie moich danych osobowych
 
                 <input type="checkbox" name="terms" value="terms_accepted"> (Zaznaczenie pozwala pełnowymiarowe
                 korzystanie z usług)
 
             </label>
         </p>
-        <label>Temat wiadomość
+        <label class="form_main">Temat wiadomości
             <select name="email_topic">
                 <optgroup label="Produkty">
                     <option>Zakupy</option>
@@ -113,12 +113,12 @@
             (Wybór tematu z listy)
         </label>
         <br>
-        <textarea name="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4" cols="36"></textarea>
+        <textarea class="text_main" name="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4" cols="36"></textarea>
         (Ciąg alfanumeryczny o maksymalnej liczbie znaków: 200)
 
         <br>
-        <input type="submit" value="Wyślij">
-        <input type="reset" value="Reset">
+        <input class="submit_form_main" type="submit" value="Wyślij">
+        <input class="reset_form_main" type="reset" value="Reset">
 
 
     </form>
