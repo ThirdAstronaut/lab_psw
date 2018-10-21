@@ -88,14 +88,6 @@
 
             </label>
         </p>
-        <p>
-            <label class="form_main">Wyrażam zgodę na przetwarzanie moich danych osobowych
-
-                <input type="checkbox" name="terms" value="terms_accepted"> (Zaznaczenie pozwala pełnowymiarowe
-                korzystanie z usług)
-
-            </label>
-        </p>
         <label class="form_main">Temat wiadomości
             <select name="email_topic">
                 <optgroup label="Produkty">
@@ -113,16 +105,21 @@
             (Wybór tematu z listy)
         </label>
         <br>
-        <textarea class="text_main" name="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4" cols="36"></textarea>
+        <textarea class="text_main" name="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości"
+            rows="4" cols="36"></textarea>
         (Ciąg alfanumeryczny o maksymalnej liczbie znaków: 200)
-
-        <br>
+        <br> <br>
+        <div>
+            <a href="">Regulamin</a>
+            <input type="checkbox" name="terms" value="terms_accepted" id="terms_checkbox">
+            <label for="terms_checkbox">Zapoznałem się z regulaminem serwisu</label>
+        </div>
         <input class="submit_form_main" type="submit" value="Wyślij">
         <input class="reset_form_main" type="reset" value="Reset">
-
-
     </form>
+    <br>
     <footer>
+        <p></p>
         <details>
             <hr>
             <p>Znajdź nas na facebooku!
