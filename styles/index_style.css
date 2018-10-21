@@ -2,6 +2,10 @@ body{
     font-family: Lato;
 }
 
+a{
+  text-decoration: none;
+}
+
 .best_price{
     color:red;
     display:inline;
@@ -10,6 +14,38 @@ body{
 .align_left{
     float:left;
 }
+
+.menu{
+  display: block;
+  font-weight: bold;
+  color: white;
+  border: 2px solid royalblue;
+  text-align: center;
+  width: 10em;
+  background-color: royalblue;
+}
+
+.menu ul{
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.menu:hover ul{
+  display: block;
+}
+
+.menu ul li{
+  border-top: 2px solid royalblue;
+  background-color: white;
+  width: 10em;
+  color: black;
+}
+
+.menu ul li:hover{background-color: powderblue;}
+
 
 .banner{
   display: block;
@@ -28,6 +64,12 @@ body{
   font-weight: 600;
   color: #660066;
   padding-top: 200px;
+}
+
+@media only screen and (max-width: 600px){
+  body{
+    background-color: lightblue;
+  }
 }
 
 .telephone{
@@ -57,8 +99,40 @@ body{
   background-color: magenta;
 }
 
+.sale_table_index{
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.sale_table_index th,.sale_table_index td {
+    text-align: left;
+    padding: 8px;
+}
+
+.sale_table_index tr:nth-child(even){background-color: #f2f2f2}
+
+.sale_table_index th {
+    background-color: #4CAF50;
+    color: white;
+}
+
 .discount_table_index, td {
     border: 1px solid black;
+}
+
+.discount_table_index th, .discount_table_index td{
+  text-align: left;
+  padding: 8px;
+}
+
+.discount_table_index tr:first-child{
+  color: white;
+  background-color: darkblue;
+}
+
+.discount_table_index th {
+    background-color: #4CAF50;
+    color: white;
 }
 
 .cover_whole_area_table_index{
