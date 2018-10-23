@@ -20,13 +20,6 @@ input[type="checkbox"]:checked + label {
   color : green
 }
 
-.main_menu{
-  position: fixed;
-  display: block;
-  width: 100%;
-  background-color: white;
-}
-
 .menu{
   display: block;
   font-weight: bold;
@@ -60,7 +53,6 @@ input[type="checkbox"]:checked + label {
 
 
 .banner{
-  padding-top: 50px;
   display: block;
   height: 500px;
   background-image: url("../images/kot.jpg");
@@ -77,6 +69,7 @@ input[type="checkbox"]:checked + label {
   font-weight: 600;
   color: #660066;
   padding-top: 200px;
+  text-shadow: white 0px 0px 10px;
 }
 
 @media only screen and (max-width: 600px){
@@ -143,6 +136,12 @@ input[type="checkbox"]:checked + label {
   background-color: darkblue;
 }
 
+
+.discount_table_index tr:last-child{
+  color: white;
+  background-color: rgb(255, 115, 115);
+}
+
 .discount_table_index th {
     background-color: #4CAF50;
     color: white;
@@ -163,23 +162,6 @@ input[type="checkbox"]:checked + label {
   font-weight: 700;
   font-style: italic;
   font-family: sans-serif;
-}
-
-.history, .find_us{
-  float: left;
-  width: 45%;
-  background-color: #9b9999;
-  margin-left: 5px;
-}
-
-.history:hover, .find_us:hover{
-  background-color: #a7a5a5;
-}
-
-.about_description::after{
-  content: "";
-  display: block;
-  clear: both;
 }
 
 .history p{
