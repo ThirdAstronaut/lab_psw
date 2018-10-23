@@ -261,3 +261,19 @@ input[type="url"]:disabled {
 input:required {
   border-color: rgb(255, 0, 0);
 }
+
+/*
+p:last-of-type {
+    background: #ff0000;
+}
+.discount_table_index tr:last-child{
+  color: white;
+  background-color: darkblue;
+}
+p:only-child {
+    background: red;
+}
+
+
+
+*/
