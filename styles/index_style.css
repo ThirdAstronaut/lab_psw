@@ -20,6 +20,7 @@ input[type="checkbox"]:checked + label {
   color : green
 }
 
+
 .menu{
   display: block;
   font-weight: bold;
@@ -85,7 +86,7 @@ input[type="checkbox"]:checked + label {
     border-style:solid ;
     padding-left: 10pt;
     padding-right: 10pt;
-
+box-shadow: rgb(255, 207, 145) 0px 2px 10px;
 }
 
 .survey{
@@ -260,6 +261,17 @@ input[type="url"]:disabled {
 
 input:required {
   border-color: rgb(255, 0, 0);
+}
+
+#opinions{
+ 
+  border: 2px solid blue;
+  padding-top : 1px;
+  padding-bottom : 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius : 50px;
+  display: inline-block
 }
 
 /*
