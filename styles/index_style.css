@@ -273,9 +273,7 @@ input:required {
   border-radius : 50px;
   display: inline-block
 }
-
-/*
-p:last-of-type {
+/*p:last-of-type {
     background: #ff0000;
 }
 .discount_table_index tr:last-child{
@@ -284,8 +282,17 @@ p:last-of-type {
 }
 p:only-child {
     background: red;
+}*/
+
+
+
+/*LISTA 4 CSS*/
+@font-face {
+  font-family: websiteTitleFont;
+  src: url(Raleway-ExtraLight.ttf);
 }
 
+.website_title {
+  font-family: websiteTitleFont;
+}
 
-
-*/
