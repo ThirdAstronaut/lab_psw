@@ -91,6 +91,14 @@ input[type="checkbox"]:checked + label {
 box-shadow: rgb(255, 207, 145) 0px 2px 10px;
 }
 
+.top_about{
+  display: block;
+  padding-top: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 340px;
+}
+
 .survey{
     border-color: blue;
     border-width: thin;
@@ -111,6 +119,7 @@ box-shadow: rgb(255, 207, 145) 0px 2px 10px;
 .sale_table_index{
     border-collapse: collapse;
     width: 50%;
+    float: left;
 }
 
 .sale_table_index th,.sale_table_index td {
