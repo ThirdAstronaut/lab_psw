@@ -38,6 +38,7 @@ input[type="checkbox"]:checked+label {
   margin: 0;
   padding: 0;
   float: left;
+position: fixed;
 }
 
 .menu:hover ul {
@@ -300,7 +301,6 @@ td {
 .form_main {
   display: inline-block;
   height: 1.5em;
-  position: relative;
   left: 1ex;
   bottom: 1ex;
   font-weight: 600;
@@ -476,7 +476,7 @@ screen and (max-width: 480px) {
   }
 }
 
-/*LISTA 4 CSS*/
+
 @font-face {
   font-family: websiteTitleFont;
   src: url(Raleway-ExtraLight.ttf);
