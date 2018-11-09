@@ -52,6 +52,75 @@
             background-size: 60%
         }
     </style>
+    <script type = "text/javascript">
+<!--
+ var firstNumber; // first string entered by user
+
+ var number1; // first number to add
+ var number2; // second number to add
+ var year_of_birth; // sum of number1 and number2
+ var d = new Date();
+ var n = d.getFullYear();
+
+ var hour= d.getHours();
+
+ // read in first number from user as a string
+ firstNumber = window.prompt("Podaj, ile masz lat: ");
+
+ // convert numbers from strings to integers
+ number1 = parseInt(firstNumber);
+ year_of_birth = n - number1; // add the numbers
+ if(hour<12)
+  document.writeln( "<h1>Witamy o poranku! </h1>" );
+ else {
+   hour = hour - 12;
+
+   if (hour<6) {
+     document.writeln("<h1>Witamy po południu!</h1>");
+   }
+   else {
+     document.writeln("<h1>Witamy wieczorem!</h1>");
+   }
+ }
+
+ // display the results
+ document.writeln("<h1>Urodziłeś/aś się w "+year_of_birth+"</h1>");
+ // -->
+
+ // variables used to interact with the i mg elements
+var die1Image;
+var die2Image;
+ var die3Image;
+ var die4Image;
+
+ // register button listener and get the img elements
+ function start()
+ {
+   var button = document.getElementById("rollButton");
+   button.addEventListener("click", rollDice, false);
+   die1Image = document.getElementById("die1");
+   die2Image = document.getElementById("die2");
+   die3Image = document.getElementById("die3");
+   die4Image = document.getElementById("die4");
+ }
+
+ function rollDice()
+ {
+   setImage(die1Image);
+   setImage(die2Image);
+   setImage(die3Image);
+   setImage(die4Image);
+ }
+
+ function setImage(dieImg)
+ {
+   var dieValue = Math.floor(1 + Math.random() * 6);
+   dieImg.setAttribute("src","./images/die" + dieValue + ".png");
+   dieImg.setAttribute("alt", "die image with" + dieValue + " spot(s)");
+ }
+
+ window.addEventListener("load", start, false);
+ </script>
 </head>
 
 <body>
@@ -145,6 +214,18 @@
 
         </p>
     </div>
+    <p id="demo">
+      ___
+    </p>
+    <form action = "#">
+        <input id = "rollButton" type = "button" value = "Roll Dice">
+    </form>
+    <ol>
+      <li><img id="die1" src="./images/blank.png" alt="die 1 image" width="50" height="30"></li>
+      <li><img id="die2" src="./images/blank.png" alt="die 2 image" width="50" height="30"></li>
+      <li><img id="die3" src="./images/blank.png" alt="die 3 image" width="50" height="30"></li>
+      <li><img id="die4" src="./images/blank.png" alt="die 4 image" width="50" height="30"></li>
+    </ol>
     <footer>
         <p></p>
         <details>
