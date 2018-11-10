@@ -8,6 +8,16 @@
     <meta name="author" content="Rafał Lechowicz, Jan Żyrek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
+    <script src="scripts/survey.js"></script>
+    <script>
+        function showNameHint(){
+document.getElementById("first_name_hint").innerHTML = "(Ciąg znaków - max.30)";
+}
+
+function hideNameHint() {
+document.getElementById("first_name_hint").innerHTML = "";
+}
+</script>
     <title>Formularz kontaktowy - Z-KOM</title>
 </head>
 
@@ -38,10 +48,10 @@
     <h1>Skontaktuj się z nami!</h1>
     <form method="post" action="form_extra.html">
         <p>
-            <label class="form_main">Imie
+            <label class="form_main" onmouseover="showNameHint()" onmouseout="hideNameHint()">Imie
 
-                <input type="text" name="first_name" size="30" maxlength="30" autofocus autocomplete="name"> (Ciąg
-                znaków - max. 30)
+                <input type="text" id="first_name_input" name="first_name_input" size="30" maxlength="30" autofocus
+                    autocomplete="name"> <span id="first_name_hint"></span>
 
             </label>
         </p>

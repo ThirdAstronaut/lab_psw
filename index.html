@@ -8,6 +8,13 @@
     <meta name="author" content="Rafał Lechowicz, Jan Żyrek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
+    <script>
+        function submitButtonClicked(){
+alert("Dziękujemy za przesłanie opini");
+};
+
+</script>
+
     <title>Z-KOM - Internetowy sklep komputerowy</title>
 </head>
 
@@ -80,7 +87,7 @@
             <p>Nie
                 <input name="survey" type="radio" value="nie">
             </p>
-            <input type="submit" value="Głosuj">
+            <input id="submit_survey_button" type="submit" value="Głosuj" onclick="submitButtonClicked()">
 
 
         </aside>
@@ -250,16 +257,10 @@
         </tfoot>
     </table>
     <br>
+
     <div id="opinions">
         <h1>Opinie klientów:</h1>
-        <ul>
-            <li>Marek Kowalski, Opole: &quot;Zdecydowanie polecam, niskie ceny, szybka dostawa.&quot;</li>
-            <li>Piotr Nowak, Warszawa:
-                <ol>
-                    <li>&quot;Nie znajdziecie lepszego, 10/10&quot;</li>
-                    <li>&quot;Kolejne zakupy również udane, rzetelna obsługa, polecam&quot;</li>
-                </ol>
-        </ul>
+        <p id="random_opinions"></p>
     </div>
     <section>
         <section>Kliknij
@@ -294,6 +295,24 @@
             <p>&copy;Copy rights reserved</p>
         </details>
     </footer>
+    <script>
+        var opinions = ["Marek Kowalski&#44; Opole: &quot;Zdecydowanie polecam, niskie ceny, szybka dostawa.&quot;",
+            "Piotr Smuda&#44;\
+Warszawa: &quot;Nie znajdziecie lepszego&#44; 10 / 10 &quot;",
+            "Piotr Nowak, Warszawa: &quot;Kolejne zakupy również udane&#44;\
+rzetelna obsługa polecam &quot;",
+            "John Smith&#44; Wrocław: &quot;Very good!&quot;",
+            "Jan Kowal&#44; Warszawa: &quot;Najlepszy sklep!&quot;"
+        ];
+        var text = "<ul>";
+        var i;
+        for (i = 0; i < 3; i++) {
+            text += "<li>" + opinions[opinions.length - i - 1] + "</li>";
+        }
+        text += "</ul>"
+
+        document.getElementById("random_opinions").innerHTML = text;
+    </script>
 </body>
 
 </html>
