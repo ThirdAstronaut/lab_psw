@@ -306,8 +306,13 @@ rzetelna obsługa polecam &quot;",
         ];
         var text = "<ul>";
         var i;
-        for (i = 0; i < 3; i++) {
-            text += "<li>" + opinions[opinions.length - i - 1] + "</li>";
+        var set = new Set()
+        do {
+            set.add(Math.floor((Math.random() * opinions.length)))
+        } while (set.size < 3)
+        document.writeln(set[0])
+        for (let item of set.values()) {
+            text += "<li>" + opinions[item] + "</li>";
         }
         text += "</ul>"
 

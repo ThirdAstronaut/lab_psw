@@ -16,6 +16,9 @@ a {
 .align_left {
   float: left;
 }
+.align_right {
+  float: right;
+}
 
 input[type="checkbox"]:checked+label {
   color: green
