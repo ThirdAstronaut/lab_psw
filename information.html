@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
     <title>Z-KOM - Centrum wiedzy</title>
     <style type="text/css">
+        a            { text-decoration: none; }
+        a:hover      { text-decoration: underline; }
         nav ul {
             display: none;
             list-style: none;
@@ -50,6 +52,11 @@
             background: #ebfaff url("images/website_under_construction.png") no-repeat fixed bottom;
             background-size: 60%
         }
+
+        .nav_info         { width: 100%;
+                       border-top: 3px dashed blue;
+                       padding-top: 10px; }
+        .highlighted { background-color: yellow; }
     </style>
     <script type="text/javascript">
         <!--
@@ -61,10 +68,10 @@
         var n = d.getFullYear();
         var hour = d.getHours();
         // read in first number from user as a string
-        firstNumber = window.prompt("Podaj, ile masz lat: ");
+      //  firstNumber = window.prompt("Podaj, ile masz lat: ");
         // convert numbers from strings to integers
-        number1 = parseInt(firstNumber);
-        year_of_birth = n - number1; // add the numbers
+      //  number1 = parseInt(firstNumber);
+      //  year_of_birth = n - number1; // add the numbers
         if (hour < 12)
             document.writeln("<h1>Witamy o poranku! </h1>");
         else {
@@ -76,7 +83,7 @@
             }
         }
         // display the results
-        document.writeln("<h1>Urodziłeś/aś się w " + year_of_birth + "</h1>");
+      //  document.writeln("<h1>Urodziłeś/aś się w " + year_of_birth + "</h1>");
         // -->
         // variables used to interact with the i mg elements
         var die1Image;
@@ -107,6 +114,7 @@
         }
         window.addEventListener("load", start, false);
     </script>
+    <script src = "dom.js"></script>
 </head>
 
 <body>
@@ -212,6 +220,42 @@
         <li><img id="die3" src="./images/blank.png" alt="die 3 image" width="50" height="30"></li>
         <li><img id="die4" src="./images/blank.png" alt="die 4 image" width="50" height="30"></li>
     </ol>
+    <h1 id = "bigheading" class = "highlighted">
+       [bigheading] DHTML Object Model</h1>
+    <h3 id = "smallheading">[smallheading] Element Functionality</h3>
+    <p id = "para1">[para1] The Document Object Model (DOM) allows for
+       quick, dynamic access to all elements in an HTML5 document for
+       manipulation with JavaScript.</p>
+    <p id = "para2">[para2] For more information, check out the
+       "JavaScript and the DOM" section of Deitel's
+       <a id = "link" href = "http://www.deitel.com/javascript">
+          [link] JavaScript Resource Center.</a></p>
+    <p id = "para3">[para3] The buttons below demonstrate:(list)</p>
+    <ul id = "list">
+       <li id = "item1">[item1] getElementById and parentNode</li>
+       <li id = "item2">[item2] insertBefore and appendChild</li>
+       <li id = "item3">[item3] replaceChild and removeChild</li>
+    </ul>
+    <div id = "nav" class = "nav_info">
+       <form action = "#">
+          <p><input type = "text" id = "gbi" value = "bigheading">
+             <input type = "button" value = "Get By id"
+                id = "byIdButton"></p>
+          <p><input type = "text" id = "ins">
+             <input type = "button" value = "Insert Before"
+                id = "insertButton"></p>
+          <p><input type = "text" id = "append">
+             <input type = "button" value = "Append Child"
+                id = "appendButton"></p>
+          <p><input type = "text" id = "replace">
+             <input type = "button" value = "Replace Current"
+                id = "replaceButton"></p>
+          <p><input type = "button" value = "Remove Current"
+                id = "removeButton"></p>
+          <p><input type = "button" value = "Get Parent"
+                id = "parentButton"></p>
+       </form>
+    </div>
     <footer>
         <p></p>
         <details>

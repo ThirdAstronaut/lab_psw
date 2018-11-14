@@ -14,6 +14,7 @@ alert("Dziękujemy za przesłanie opini");
 };
 
 </script>
+<script src = "dom.js"></script>
 
     <title>Z-KOM - Internetowy sklep komputerowy</title>
 </head>
@@ -25,7 +26,7 @@ alert("Dziękujemy za przesłanie opini");
                     <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left">
                 </a>
 
-                <h1 class="website_title">Z-KOM</h1>
+                <h1 class="website_title" id="web_title">Z-KOM</h1>
         </div>
         <p>
             <nav class="menu">Menu
@@ -278,6 +279,9 @@ alert("Dziękujemy za przesłanie opini");
         <p></p>
         <details>
             <hr>
+            <div id="links">
+              __
+            </div>
             <p>Znajdź nas na portalach społecznościowych!</p>
             <div id="social_media_icons">
                 <a href="http://www.facebook.com/">
@@ -317,6 +321,22 @@ rzetelna obsługa polecam &quot;",
         text += "</ul>"
 
         document.getElementById("random_opinions").innerHTML = text;
+    </script>
+    <script type="text/javascript">
+
+      function start()
+      {
+         var inputColor = prompt( "Enter a color name for the " +
+            "background of this page", "" );
+         var inputTextColor = prompt( "Enter a color name for the " +
+            "text Z-KOM", "" );
+         document.body.setAttribute( "style",
+            "background-color: " + inputColor );
+         var el = document.getElementById("web_title");
+            el.style.color = inputTextColor;
+      } // end function start
+
+      window.addEventListener( "load", start, false );
     </script>
 </body>
 
