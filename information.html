@@ -90,6 +90,7 @@
         var die2Image;
         var die3Image;
         var die4Image;
+
         // register button listener and get the img elements
         function start() {
             var button = document.getElementById("rollButton");
@@ -208,10 +209,10 @@
 
         </p>
     </div>
-    <p id="demo">
-        ___
-    </p>
-    <form action="#">
+    <img src="./images/die1.png" alt="die1" width="50" height="30">
+    <img src="./images/die3.png" alt="die3" width="50" height="30">
+    <img src="./images/die5.png" alt="die5" width="50" height="30">
+    <form action="#" id="rollingDice">
         <input id="rollButton" type="button" value="Roll Dice">
     </form>
     <ol>
@@ -277,6 +278,24 @@
             <p>&copy;Copy rights reserved</p>
         </details>
     </footer>
+
+    <script>
+    function myFunction() {
+        for (var i = 1; i < 4; i++) {
+          var x = document.images.item(i);
+          x.style.border = "3px dotted black";
+        }
+    }
+    function styleRollButton() {
+        var x = document.forms.namedItem("rollingDice");
+        x.style.width = "100px";
+        x.style.height = "50px";
+        x.style.background = "royalblue";
+        x.style.border = "3px dotted black";
+    }
+    window.addEventListener("load", myFunction, false);
+    window.addEventListener("load", styleRollButton, false);
+    </script>
 </body>
 
 </html>

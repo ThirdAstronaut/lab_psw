@@ -118,7 +118,8 @@ function switchTo( newNode )
 function processLinks()
 {
    var linksList = document.links; // get the document's links
-   var contents = "";
+   var anchorsLogo = document.anchors[0].innerHTML;
+   var contents =  anchorsLogo + " | ";
    var finish = linksList.length-7;
 
    // concatenate each link to contents
