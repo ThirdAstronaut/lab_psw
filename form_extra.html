@@ -10,6 +10,10 @@
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
     <title>Z-KOM - Szegółowy formularz</title>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 </head>
 
 <body>
@@ -21,8 +25,20 @@
             <h1 class="website_title">Z-KOM</h1>
         </div>
         <p>
+<<<<<<< Updated upstream
             <strong>Najlepszy</strong> sklep internetowy z częściami komputerowymi!</a>
         </p>
+=======
+            <nav class="menu">Menu
+                <ul>
+                    <li><a class="wide" href="index.html">Strona główna</a></li>
+                    <li><a class="wide" href="about.html">O firmie</a></li>
+                    <li><a class="wide" href="form.html">Formularz kontaktowy</a></li>
+                    <li><a class="wide" href="form_extra.html">Formularz szczegółowy</a></li>
+                    <li><a class="wide" href="information.html">Szczegółowe informacje</a></li>
+                </ul>
+            </nav>
+>>>>>>> Stashed changes
     </header>
     <nav>
         <a href="index.html">Strona główna</a>
@@ -36,11 +52,13 @@
         <p>Zadzwoń - 123-345-567</p>
 
     </aside>
+    <br>
     <h1>Dodatkowe informacje</h1>
     <form method="post" action="index.html">
         <p>
             <label>Od kiedy nas znasz?
 
+<<<<<<< Updated upstream
                 <input type="month" name="how_long"> (Data typu Miesiąc Rok)
 
             </label>
@@ -55,6 +73,26 @@
             <label style="color:rgb(42, 125, 209); font-size:10pt;">Wybierz swój ulubiony kolor laptopa
 
                 <input type="color" autofocus> (Heksadecymalny kod jak #FFFFFF)
+=======
+                </label>
+            </div>
+            <div class="row">
+                <label>Ile masz wzrostu w metrach?
+
+                    <input type="text" id="height" onchange="location.reload()">
+                    <p id="your_height" style="display: inline"></p>
+
+                </label>
+            </div>
+            <div class="row">
+                <style type="text/css">
+                    label {
+                        color: rgb(62, 138, 46);
+                        font-size: 12pt;
+                    }
+                </style>
+                <label style="color:rgb(42, 125, 209); font-size:10pt;">Wybierz swój ulubiony kolor laptopa
+>>>>>>> Stashed changes
 
             </label>
         </p>
@@ -104,6 +142,26 @@
             <p>&copy;Copy rights reserved</p>
         </details>
     </footer>
+<<<<<<< Updated upstream
+=======
+    <script>
+        var height_input = document.getElementById("height").value
+        var height = parseFloat(height_input)
+        var result = ''
+        switch (true) {
+            case height < 1.5:
+                result = 'Masz poniżej 1.5m';
+                break;
+            case height >= 1.5 && height <= 2:
+                result = 'masz pomiędzy 1.5, a 2 metry'
+                break;
+            case height >= 2:
+                result = 'masz ponad 2m';
+                break;
+        }
+        document.getElementById("your_height").innerHTML = result;
+    </script>
+>>>>>>> Stashed changes
 </body>
 
 </html>
