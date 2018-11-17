@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
+
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe.">
@@ -7,8 +8,8 @@
     <meta name="author" content="Rafał Lechowicz, Jan Żyrek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
-    <script src="scripts/survey.js"></script>
-    <script>
+    <script src="focusBlur.js"></script>
+    <!--    <script>
         function showNameHint(){
 document.getElementById("first_name_hint").innerHTML = "(Ciąg znaków - max.30)";
 }
@@ -16,7 +17,7 @@ document.getElementById("first_name_hint").innerHTML = "(Ciąg znaków - max.30)
 function hideNameHint() {
 document.getElementById("first_name_hint").innerHTML = "";
 }
-</script>
+</script>-->
     <title>Formularz kontaktowy - Z-KOM</title>
 </head>
 
@@ -31,11 +32,11 @@ document.getElementById("first_name_hint").innerHTML = "";
         <p>
             <nav class="menu">Menu
                 <ul>
-                    <li><a href="index.html">Strona główna</a></li>
-                    <li><a href="about.html">O firmie</a></li>
-                    <li><a href="form.html">Formularz kontaktowy</a></li>
-                    <li><a href="form_extra.html">Formularz szczegółowy</a></li>
-                    <li><a href="information.html">Szczegółowe informacje</a></li>
+                    <li><a class="wide" href="index.html">Strona główna</a></li>
+                    <li><a class="wide" href="about.html">O firmie</a></li>
+                    <li><a class="wide" href="form.html">Formularz kontaktowy</a></li>
+                    <li><a class="wide" href="form_extra.html">Formularz szczegółowy</a></li>
+                    <li><a class="wide" href="information.html">Szczegółowe informacje</a></li>
                 </ul>
             </nav>
     </header>
@@ -45,24 +46,19 @@ document.getElementById("first_name_hint").innerHTML = "";
 
     </aside>
     <h1>Skontaktuj się z nami!</h1>
-    <form method="post" action="form_extra.html">
+    <form method="post" action="form_extra.html" id="contact_form">
         <p>
-            <label class="form_main" onmouseover="showNameHint()" onmouseout="hideNameHint()">Imie
-
-                <input type="text" id="first_name_input" name="first_name_input" size="30" maxlength="30" autofocus
-                    autocomplete="name"> <span id="first_name_hint"></span>
-
-            </label>
+            <label class="form_main" onmouseover="showNameHint()" onmouseout="hideNameHint()" for="first_name_input">Imie</label>
+            <input type="text" id="first_name_input" name="first_name_input" size="30" maxlength="30" autofocus
+                autocomplete="name"> <span id="first_name_hint"></span>
         </p>
         <p>
-            <label class="form_main">Nazwisko
-                <input type="text" name="last_name" size="30" maxlength="50" required autocomplete="family-name"> (Ciąg
-                znaków - max. 50)
-            </label>
+            <label class="form_main" for="last_name">Nazwisko</label>
+            <input type="text" id="last_name" size="30" maxlength="50" required autocomplete="family-name"><span id="last_name_hint"></span>
         </p>
         <p>
-            <label class="form_main">Miesiąc urodzin
-                <input list="month_of_birth">
+            <label class="form_main" for="month_of_birth">Miesiąc urodzin
+                <input list="month_of_birth" id="month_of_birth">
                 <datalist id="month_of_birth">
                     <option value="1">
                     <option value="2">
@@ -77,42 +73,37 @@ document.getElementById("first_name_hint").innerHTML = "";
                     <option value="11">
                     <option value="12">
                 </datalist>
-                (Liczba całkowita - od 1 do 12)
-            </label>
+                <span id="month_of_birth_hint"></span>
         </p>
         <p>
-            <label class="form_main">Email
+            <label class="form_main" for="email">Email</label>
 
-                <input type="email" name="email" size="30" maxlength="60" required autocomplete="email"> (Ciąg znaków -
-                max. 60 ze znakiem @)
-            </label>
+            <input type="email" id="email" size="30" maxlength="60" required autocomplete="email"><span id="email_hint"></span>
         </p>
         <p>
-            <label class="form_main">Telefon
-                <input type="tel" name="telephone" pattern="[\+]?[0-9]{9,11}" autocomplete="tel">(Ciąg o
-                wzorcu:[\+]?[0-9]{9,11})
-            </label>
+            <label class="form_main" for="telephone">Telefon</label>
+            <input type="tel" id="telephone" pattern="[\+]?[0-9]{9,11}" autocomplete="tel"><span id="telephone_hint"></span>
         </p>
-        <label class="form_main">Temat wiadomości
-            <select name="email_topic">
-                <optgroup label="Produkty">
-                    <option>Zakupy</option>
-                    <option>Rabaty</option>
-                    <option>Pomoc w wyborze sprzętu</option>
-                    <option>Reklamacja</option>
-                </optgroup>
-                <optgroup label="Inne">
-                    <option>Pomoc techniczna</option>
-                    <option>Skargi i uwagi</option>
-                    <option>Inne</option>
-                </optgroup>
-            </select>
-            (Wybór tematu z listy)
-        </label>
+        <label class="form_main" for="email_topic">Temat wiadomości</label>
+        <select id="email_topic">
+            <optgroup label="Produkty">
+                <option>Zakupy</option>
+                <option>Rabaty</option>
+                <option>Pomoc w wyborze sprzętu</option>
+                <option>Reklamacja</option>
+            </optgroup>
+            <optgroup label="Inne">
+                <option>Pomoc techniczna</option>
+                <option>Skargi i uwagi</option>
+                <option>Inne</option>
+            </optgroup>
+        </select>
+        <span id="email_topic_hint"></span>
         <br>
-        <textarea class="text_main" name="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości"
-            rows="4" cols="36"></textarea>
-        (Ciąg alfanumeryczny o maksymalnej liczbie znaków: 200)
+        <textarea class="text_main" id="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4"
+            cols="36"></textarea>
+        <span id="msg_content_hint"></span>
+
         <br> <br>
         <div>
             <a href="">Regulamin</a>

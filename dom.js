@@ -141,3 +141,11 @@ function processLinks()
 } // end function processLinks
 
 window.addEventListener( "load", processLinks, false );
+
+
+
+function changeFontStyle(fontstyle) {
+      document.body.setAttribute("style",
+            "font-family: " + fontstyle);
+}
+

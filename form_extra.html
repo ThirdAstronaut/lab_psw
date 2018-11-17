@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
     <title>Z-KOM - Szegółowy formularz</title>
-    
+
 </head>
 
 <body>
@@ -24,11 +24,11 @@
         <p>
             <nav class="menu">Menu
                 <ul>
-                    <li><a href="index.html">Strona główna</a></li>
-                    <li><a href="about.html">O firmie</a></li>
-                    <li><a href="form.html">Formularz kontaktowy</a></li>
-                    <li><a href="form_extra.html">Formularz szczegółowy</a></li>
-                    <li><a href="information.html">Szczegółowe informacje</a></li>
+                    <li><a class="wide" href="index.html">Strona główna</a></li>
+                    <li><a class="wide" href="about.html">O firmie</a></li>
+                    <li><a class="wide" href="form.html">Formularz kontaktowy</a></li>
+                    <li><a class="wide" href="form_extra.html">Formularz szczegółowy</a></li>
+                    <li><a class="wide" href="information.html">Szczegółowe informacje</a></li>
                 </ul>
             </nav>
     </header>
@@ -47,13 +47,14 @@
 
                 </label>
             </div>
-<div class="row">
-    <label>Ile masz wzrostu w metrach?
+            <div class="row">
+                <label>Ile masz wzrostu w metrach?
 
-        <input type="text" id="height" onchange="location.reload()"> <p id="your_height" style="display: inline"></p>
+                    <input type="text" id="height" onchange="location.reload()">
+                    <p id="your_height" style="display: inline"></p>
 
-    </label>
-</div>
+                </label>
+            </div>
             <div class="row">
                 <style type="text/css">
                     label {
@@ -124,24 +125,24 @@
             <p>&copy;Copy rights reserved</p>
         </details>
     </footer>
-<script>
-    var height_input = document.getElementById("height").value
-    var height = parseFloat(height_input)
-    document.writeln(height)
-    var result = ''
-    switch (true) {
-        case height<1.5:
-            result = 'Masz poniżej 1.5m';
-            break;
-        case height >= 1.5 && height <= 2:
-            result = 'masz pomiędzy 1.5, a 2 metry'
-            break;
-        case height >= 2:
-            result = 'masz ponad 2m';
-            break;
-    }
-    document.getElementById("your_height").innerHTML = result;
-</script>
+    <script>
+        var height_input = document.getElementById("height").value
+        var height = parseFloat(height_input)
+        document.writeln(height)
+        var result = ''
+        switch (true) {
+            case height < 1.5:
+                result = 'Masz poniżej 1.5m';
+                break;
+            case height >= 1.5 && height <= 2:
+                result = 'masz pomiędzy 1.5, a 2 metry'
+                break;
+            case height >= 2:
+                result = 'masz ponad 2m';
+                break;
+        }
+        document.getElementById("your_height").innerHTML = result;
+    </script>
 </body>
 
 </html>

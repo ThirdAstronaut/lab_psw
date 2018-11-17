@@ -9,9 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
     <title>Z-KOM - Centrum wiedzy</title>
+    <script src="keysMousemoveScreen.js"></script>
     <style type="text/css">
-        a            { text-decoration: none; }
-        a:hover      { text-decoration: underline; }
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         nav ul {
             display: none;
             list-style: none;
@@ -53,10 +60,15 @@
             background-size: 60%
         }
 
-        .nav_info         { width: 100%;
-                       border-top: 3px dashed blue;
-                       padding-top: 10px; }
-        .highlighted { background-color: yellow; }
+        .nav_info {
+            width: 100%;
+            border-top: 3px dashed blue;
+            padding-top: 10px;
+        }
+
+        .highlighted {
+            background-color: yellow;
+        }
     </style>
     <script type="text/javascript">
         <!--
@@ -68,10 +80,10 @@
         var n = d.getFullYear();
         var hour = d.getHours();
         // read in first number from user as a string
-      //  firstNumber = window.prompt("Podaj, ile masz lat: ");
+        //  firstNumber = window.prompt("Podaj, ile masz lat: ");
         // convert numbers from strings to integers
-      //  number1 = parseInt(firstNumber);
-      //  year_of_birth = n - number1; // add the numbers
+        //  number1 = parseInt(firstNumber);
+        //  year_of_birth = n - number1; // add the numbers
         if (hour < 12)
             document.writeln("<h1>Witamy o poranku! </h1>");
         else {
@@ -83,7 +95,7 @@
             }
         }
         // display the results
-      //  document.writeln("<h1>Urodziłeś/aś się w " + year_of_birth + "</h1>");
+        //  document.writeln("<h1>Urodziłeś/aś się w " + year_of_birth + "</h1>");
         // -->
         // variables used to interact with the i mg elements
         var die1Image;
@@ -115,25 +127,41 @@
         }
         window.addEventListener("load", start, false);
     </script>
-    <script src = "dom.js"></script>
+    <script src="dom.js"></script>
 </head>
 
-<body>
+<body onmousemove="showCoords(event)" onmouseout="clearCoor()">
     <header class="main_menu">
         <div style=" position: static;">
             <p><a href="index.html" class="logo">
                     <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left">
                 </a>
+                <p id="demo" class="align_right display_inline"></p>
                 <h1 class="website_title">Z-KOM</h1>
+                <div class="menu align_right display_inline">Czcionki
+                    <ul>
+                        <li>
+                            <div class="cursor_pointer" onclick="changeFontStyle('Comic Sans MS')">Comic Sans MS</div>
+                        </li>
+                        <li>
+                            <div class="cursor_pointer" onclick="changeFontStyle('Arial')">Arial</div>
+                        </li>
+                        <li>
+                            <div class="cursor_pointer" onclick="changeFontStyle('Times New Roman')">Times New Roman</div>
+                        </li>
+
+                    </ul>
+                </div>
+
         </div>
         <p>
             <nav class="menu">Menu
                 <ul>
-                    <li><a href="index.html">Strona główna</a></li>
-                    <li><a href="about.html">O firmie</a></li>
-                    <li><a href="form.html">Formularz kontaktowy</a></li>
-                    <li><a href="form_extra.html">Formularz szczegółowy</a></li>
-                    <li><a href="information.html">Szczegółowe informacje</a></li>
+                    <li><a class="wide" href="index.html">Strona główna</a></li>
+                    <li><a class="wide" href="about.html">O firmie</a></li>
+                    <li><a class="wide" href="form.html">Formularz kontaktowy</a></li>
+                    <li><a class="wide" href="form_extra.html">Formularz szczegółowy</a></li>
+                    <li><a class="wide" href="information.html">Szczegółowe informacje</a></li>
                 </ul>
             </nav>
     </header>
@@ -180,7 +208,7 @@
     <br>
 
     <div class="multicolumns">
-        <p class="multi_text">
+        <p class="multi_text" onmousedown="mouseDown()" onmouseup="mouseUp()">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Vestibulum mattis maximus elementum. Ut in tellus metus.
             Vivamus efficitur tempor lorem, hendrerit auctor leo.
@@ -192,14 +220,14 @@
             Quisque volutpat nunc tellus, id aliquam felis finibus et.
 
         </p>
-        <p class="multi_text">
+        <p class="multi_text" onmousedown="mouseDown()" onmouseup="mouseUp()">
             Sed diam felis, vestibulum eu enim eget, aliquam lacinia dui. Maecenas semper neque sed ullamcorper
             maximus.
             Nunc ut pharetra risus. Nam molestie vel augue eu mattis. Vivamus pretium convallis sem in rutrum.
             Nullam luctus dui mi, nec consequat dui pellentesque sed.
             Vivamus dictum est ac vehicula consequat. Nullam luctus bibendum nulla, ac elementum ante egestas at.
         </p>
-        <p class="multi_text">
+        <p class="multi_text" onmousedown="mouseDown()" onmouseup="mouseUp()">
             Pellentesque nec mauris eget sapien vestibulum aliquet. Sed congue egestas lectus. Curabitur luctus urna
             vel tincidunt pellentesque.
             Nulla et tincidunt metus. Curabitur finibus commodo velit in fermentum. Curabitur vitae lorem non justo
@@ -221,41 +249,35 @@
         <li><img id="die3" src="./images/blank.png" alt="die 3 image" width="50" height="30"></li>
         <li><img id="die4" src="./images/blank.png" alt="die 4 image" width="50" height="30"></li>
     </ol>
-    <h1 id = "bigheading" class = "highlighted">
-       [bigheading] DHTML Object Model</h1>
-    <h3 id = "smallheading">[smallheading] Element Functionality</h3>
-    <p id = "para1">[para1] The Document Object Model (DOM) allows for
-       quick, dynamic access to all elements in an HTML5 document for
-       manipulation with JavaScript.</p>
-    <p id = "para2">[para2] For more information, check out the
-       "JavaScript and the DOM" section of Deitel's
-       <a id = "link" href = "http://www.deitel.com/javascript">
-          [link] JavaScript Resource Center.</a></p>
-    <p id = "para3">[para3] The buttons below demonstrate:(list)</p>
-    <ul id = "list">
-       <li id = "item1">[item1] getElementById and parentNode</li>
-       <li id = "item2">[item2] insertBefore and appendChild</li>
-       <li id = "item3">[item3] replaceChild and removeChild</li>
+    <h1 id="bigheading" class="highlighted">
+        [bigheading] DHTML Object Model</h1>
+    <h3 id="smallheading">[smallheading] Element Functionality</h3>
+    <p id="para1">[para1] The Document Object Model (DOM) allows for
+        quick, dynamic access to all elements in an HTML5 document for
+        manipulation with JavaScript.</p>
+    <p id="para2">[para2] For more information, check out the
+        "JavaScript and the DOM" section of Deitel's
+        <a id="link" href="http://www.deitel.com/javascript">
+            [link] JavaScript Resource Center.</a></p>
+    <p id="para3">[para3] The buttons below demonstrate:(list)</p>
+    <ul id="list">
+        <li id="item1">[item1] getElementById and parentNode</li>
+        <li id="item2">[item2] insertBefore and appendChild</li>
+        <li id="item3">[item3] replaceChild and removeChild</li>
     </ul>
-    <div id = "nav" class = "nav_info">
-       <form action = "#">
-          <p><input type = "text" id = "gbi" value = "bigheading">
-             <input type = "button" value = "Get By id"
-                id = "byIdButton"></p>
-          <p><input type = "text" id = "ins">
-             <input type = "button" value = "Insert Before"
-                id = "insertButton"></p>
-          <p><input type = "text" id = "append">
-             <input type = "button" value = "Append Child"
-                id = "appendButton"></p>
-          <p><input type = "text" id = "replace">
-             <input type = "button" value = "Replace Current"
-                id = "replaceButton"></p>
-          <p><input type = "button" value = "Remove Current"
-                id = "removeButton"></p>
-          <p><input type = "button" value = "Get Parent"
-                id = "parentButton"></p>
-       </form>
+    <div id="nav" class="nav_info">
+        <form action="#">
+            <p><input type="text" id="gbi" value="bigheading">
+                <input type="button" value="Get By id" id="byIdButton"></p>
+            <p><input type="text" id="ins">
+                <input type="button" value="Insert Before" id="insertButton"></p>
+            <p><input type="text" id="append">
+                <input type="button" value="Append Child" id="appendButton"></p>
+            <p><input type="text" id="replace">
+                <input type="button" value="Replace Current" id="replaceButton"></p>
+            <p><input type="button" value="Remove Current" id="removeButton"></p>
+            <p><input type="button" value="Get Parent" id="parentButton"></p>
+        </form>
     </div>
     <footer>
         <p></p>
@@ -280,21 +302,22 @@
     </footer>
 
     <script>
-    function myFunction() {
-        for (var i = 1; i < 4; i++) {
-          var x = document.images.item(i);
-          x.style.border = "3px dotted black";
+        function myFunction() {
+            for (var i = 1; i < 4; i++) {
+                var x = document.images.item(i);
+                x.style.border = "3px dotted black";
+            }
         }
-    }
-    function styleRollButton() {
-        var x = document.forms.namedItem("rollingDice");
-        x.style.width = "100px";
-        x.style.height = "50px";
-        x.style.background = "royalblue";
-        x.style.border = "3px dotted black";
-    }
-    window.addEventListener("load", myFunction, false);
-    window.addEventListener("load", styleRollButton, false);
+
+        function styleRollButton() {
+            var x = document.forms.namedItem("rollingDice");
+            x.style.width = "100px";
+            x.style.height = "50px";
+            x.style.background = "royalblue";
+            x.style.border = "3px dotted black";
+        }
+        window.addEventListener("load", myFunction, false);
+        window.addEventListener("load", styleRollButton, false);
     </script>
 </body>
 

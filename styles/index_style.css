@@ -9,7 +9,9 @@ a {
   text-decoration: none;
 }
 
-
+.display_inline{
+  display: inline;
+}
 .best_price {
   color: red;
   display: inline;
@@ -21,10 +23,19 @@ a {
 .align_right {
   float: right;
 }
+.cursor_pointer{
+  cursor: pointer;
+}
+
+a.wide {
+  display: block;
+}
+
 
 input[type="checkbox"]:checked+label {
   color: green
 }
+
 
 
 .menu {
@@ -313,11 +324,11 @@ td {
   font-family: sans-serif;
 }
 
-p:empty {
+/*p:empty {
   width: 100%;
   height: 5px;
   background: #938ee6;
-}
+}*/
 
 .text_main {
   position: relative;
@@ -533,4 +544,32 @@ screen and (max-width: 480px) {
   animation-iteration-count: infinite;
   animation-duration: 5s;
   animation-direction: alternate;
+}
+
+.color_box_green {
+  width: 10px;
+  height: 10px;
+  margin: 10px;
+  background-color: #4CAF50;
+  border: 3px;
+}
+.color_box_red {
+  width: 10px;
+  height: 10px;
+  margin: 10px;
+  background-color: red;
+  border: 3px;
+}
+
+.color_box_blue {
+  width: 10px;
+  height: 10px;
+  margin: 10px;
+  background-color: royalblue;
+  border: 3px;
+}
+
+.mouse_movement_box{
+  margin: 10px;
+  border: 1px solid;
 }
