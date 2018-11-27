@@ -46,19 +46,87 @@ document.getElementById("first_name_hint").innerHTML = "";
 
     </aside>
     <h1>Skontaktuj się z nami!</h1>
-    <form method="post" action="form_extra.html" id="contact_form">
+          <?php
+      // define variables and set to empty values
+      $nameErr = $emailErr = $surnameErr = $websiteErr = $regErr = "";
+      $name = $email = $telephone = $month = $surname = $reg = $topic = $tresc = "";
+      $filled = true;
+
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["first_name_input"])) {
+          $nameErr = "Name is required";
+          $filled = false;
+        } else {
+          $name = test_input($_POST["first_name_input"]);
+        }
+
+        if (empty($_POST["email"])) {
+          $emailErr = "Email is required";
+          $filled = false;
+        } else {
+          $email = test_input($_POST["email"]);
+        }
+
+        if (empty($_POST["surname"])) {
+          $surnameErr = "";
+        } else {
+          $surname = test_input($_POST["surname"]);
+        }
+
+        if (empty($_POST["month_of_birth"])) {
+          $month = "";
+        } else {
+          $month = test_input($_POST["month_of_birth"]);
+        }
+
+        if (empty($_POST["telephone"])) {
+          $telephone = "";
+        } else {
+          $telephone = test_input($_POST["telephone"]);
+        }
+
+        if (empty($_POST["email_topic"])) {
+          $topic = "";
+        } else {
+          $topic = test_input($_POST["email_topic"]);
+        }
+
+        if (empty($_POST["tresc_wiadomosci"])) {
+          $tresc = "";
+        } else {
+          $tresc = test_input($_POST["tresc_wiadomosci"]);
+        }
+
+        if (empty($_POST["terms"])) {
+          $regErr = "Tick the terms is required";
+          $filled = false;
+        } else {
+          $reg = test_input($_POST["terms"]);
+        }
+      }
+
+      function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+      ?>
+      <p><span class="error">* required field</span></p>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="contact_form">
         <p>
             <label class="form_main" onmouseover="showNameHint()" onmouseout="hideNameHint()" for="first_name_input">Imie</label>
             <input type="text" id="first_name_input" name="first_name_input" size="30" maxlength="30" autofocus
-                autocomplete="name"> <span id="first_name_hint"></span>
+                autocomplete="name"><span class="error">* <?php echo $nameErr;?></span> <span id="first_name_hint"></span>
         </p>
         <p>
             <label class="form_main" for="last_name">Nazwisko</label>
-            <input type="text" id="last_name" size="30" maxlength="50" required autocomplete="family-name"><span id="last_name_hint"></span>
+            <input type="text" name="surname" id="last_name" size="30" maxlength="50" required autocomplete="family-name"><span class="error">* <?php echo $surnameErr;?></span>
+            <span id="last_name_hint"></span>
         </p>
         <p>
             <label class="form_main" for="month_of_birth">Miesiąc urodzin
-                <input list="month_of_birth" id="month_of_birth">
+                <input list="month_of_birth" name="month_of_birth" id="month_of_birth">
                 <datalist id="month_of_birth">
                     <option value="1">
                     <option value="2">
@@ -78,16 +146,16 @@ document.getElementById("first_name_hint").innerHTML = "";
         <p>
             <label class="form_main" for="email">Email</label>
 
-            <input type="email" id="email" size="30" maxlength="60" required autocomplete="email"><span id="email_hint"></span>
+            <input type="email" name="email" id="email" size="30" maxlength="60" required autocomplete="email"><span class="error">* <?php echo $emailErr;?></span><span id="email_hint"></span>
         </p>
         <p>
             <label class="form_main" for="telephone">Telefon</label>
-            <input type="tel" id="telephone" pattern="[\+]?[0-9]{9,11}" autocomplete="tel"><span id="telephone_hint"></span>
+            <input type="tel" name="telephone" id="telephone" pattern="[\+]?[0-9]{9,11}" autocomplete="tel"><span id="telephone_hint"></span>
         </p>
         <label class="form_main" for="email_topic">Temat wiadomości</label>
-        <select id="email_topic">
+        <select id="email_topic" name="email_topic">
             <optgroup label="Produkty">
-                <option>Zakupy</option>
+                <option value="zakupy">Zakupy</option>
                 <option>Rabaty</option>
                 <option>Pomoc w wyborze sprzętu</option>
                 <option>Reklamacja</option>
@@ -100,7 +168,7 @@ document.getElementById("first_name_hint").innerHTML = "";
         </select>
         <span id="email_topic_hint"></span>
         <br>
-        <textarea class="text_main" id="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4"
+        <textarea class="text_main" name="tresc_wiadomosci" id="msg_content" minlength="10" maxlength="200" placeholder="Treść wiadomości" rows="4"
             cols="36"></textarea>
         <span id="msg_content_hint"></span>
 
@@ -109,11 +177,45 @@ document.getElementById("first_name_hint").innerHTML = "";
             <a href="">Regulamin</a>
             <input type="checkbox" name="terms" value="terms_accepted" id="terms_checkbox">
             <label for="terms_checkbox">Zapoznałem się z regulaminem serwisu</label>
+            <span class="error">* <?php echo $regErr;?></span>
         </div>
         <input class="submit_form_main" type="submit" value="Wyślij">
         <input class="reset_form_main" type="reset" value="Reset">
     </form>
     <br>
+
+    <?php
+    if ($filled) {
+      echo "<h2>Your Input:</h2>";
+      echo $name;
+      echo "<br>";
+      echo $surname;
+      echo "<br>";
+      echo $month;
+      echo "<br>";
+      echo $email;
+      echo "<br>";
+      echo $telephone;
+      echo "<br>";
+      echo $topic;
+      echo "<br>";
+      echo $tresc;
+      echo "<br>";
+      echo $reg;
+
+      // Finding gmail mails
+      preg_match("/\bgmail\b/i",$email,$matches);
+      $arr_length = count($matches);
+      for($i=0;$i<$arr_length;$i++) {
+        if ($matches[$i] == "gmail") {
+          echo "<h2>It's nice that you use gmail.com post!</h2>";
+        }
+      }
+    }
+    else {
+      echo "<h2>You can't get input - data is required</h2>";
+    };
+    ?>
     <footer>
         <p></p>
         <details>

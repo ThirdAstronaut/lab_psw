@@ -11,7 +11,9 @@ function benchmarkWindow() {
     newWindow.document.write("<br>Vertical: " + winTop + "</p>");
     newWindow.document.write(image.outerHTML);
 }
-
+   function displayCursorPosition(){
+       alert('xD')
+   }
 
    function mouseDown() {
     
