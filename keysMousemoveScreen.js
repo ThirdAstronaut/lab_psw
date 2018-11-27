@@ -10,17 +10,13 @@ function benchmarkWindow() {
     newWindow.document.write("<br>Horizontal: " + winLeft);
     newWindow.document.write("<br>Vertical: " + winTop + "</p>");
     newWindow.document.write(image.outerHTML);
-}
-   function displayCursorPosition(){
-       alert('xD')
    }
-
    function mouseDown() {
-    
+
     var paragraphs = document.getElementsByClassName("multi_text");
     for (var i = 0; i < paragraphs.length; i++)
     paragraphs[i].style.color = "red";
-       
+
    }
 
    function mouseUp() {
