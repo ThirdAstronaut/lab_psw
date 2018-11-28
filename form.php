@@ -48,8 +48,13 @@ document.getElementById("first_name_hint").innerHTML = "";
     <h1>Skontaktuj się z nami!</h1>
           <?php
       // define variables and set to empty values
-      $nameErr = $emailErr = $surnameErr = $websiteErr = $regErr = "";
+      $nameErr = $emailErr = $surnameErr = $websiteErr = $regErr = $telErr = "";
       $name = $email = $telephone = $month = $surname = $reg = $topic = $tresc = "";
+      // Dodatki w razie nauki preg_match i preg_ - chyba trzeba dodać
+      preg_match('/^[0-9]{9,11}$/',$telephone,$agree);
+      preg_match("/[A-Za-z0-9]{30,}/", $name, $agreeName);
+      preg_match("/[A-Za-z0-9]{50,}/", $surname, $agreeSurname);
+
       $filled = true;
 
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -81,7 +86,11 @@ document.getElementById("first_name_hint").innerHTML = "";
 
         if (empty($_POST["telephone"])) {
           $telephone = "";
-        } else {
+        } elseif (count($agree)<1) {
+          $telErr = "Wrong telephone number";
+          $filled = false;
+        }
+         else {
           $telephone = test_input($_POST["telephone"]);
         }
 
@@ -185,23 +194,49 @@ document.getElementById("first_name_hint").innerHTML = "";
     <br>
 
     <?php
+    function getRealIpAddr()
+    {
+        if (!empty($_SERVER['HTTP_CLIENT_IP']))   //check ip from share internet
+        {
+          $ip=$_SERVER['HTTP_CLIENT_IP'];
+        }
+        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))   //to check ip is pass from proxy
+        {
+          $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+        else
+        {
+          $ip=$_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
+    }
     if ($filled) {
-      echo "<h2>Your Input:</h2>";
+      echo "<h2>Your Input:</h2>Imię: ";
       echo $name;
       echo "<br>";
-      echo $surname;
-      echo "<br>";
+      // RODO surname
+      function words_to_stars($text) {
+          $replace_word = preg_replace('/[^a-zA-Z0-9\']/',"Nazwisko: ",substr($text,0,1));
+          $replace_word .= str_repeat('*', strlen($text)-2);
+          $replace_word .= substr($text,strlen($text)-1,1);
+          return $replace_word;
+      }
+      echo words_to_stars($surname);
+      //echo $surname;
+      echo "<br>Miesiąc urodzin: ";
       echo $month;
-      echo "<br>";
+      echo "<br>Email: ";
       echo $email;
-      echo "<br>";
+      echo "<br>Nr telefonu: ";
       echo $telephone;
-      echo "<br>";
+      echo "<br>Temat: ";
       echo $topic;
-      echo "<br>";
+      echo "<br>Tresc wiadomości: ";
       echo $tresc;
-      echo "<br>";
+      echo "<br>Regulamin: ";
       echo $reg;
+      echo "<br>IP Address: ";
+      echo getRealIpAddr();
 
       // Finding gmail mails
       preg_match("/\bgmail\b/i",$email,$matches);
