@@ -1,45 +1,4 @@
-<!DOCTYPE html>
-<html lang="pl-PL">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe.">
-    <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe">
-    <meta name="author" content="Rafał Lechowicz, Jan Żyrek">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/index_style.css">
-    <script src="focusBlur.js"></script>
-    <!--    <script>
-        function showNameHint(){
-document.getElementById("first_name_hint").innerHTML = "(Ciąg znaków - max.30)";
-}
-
-function hideNameHint() {
-document.getElementById("first_name_hint").innerHTML = "";
-}
-</script>-->
-    <title>Formularz kontaktowy - Z-KOM</title>
-</head>
-
-<body>
-    <header class="main_menu">
-        <div style=" position: static;">
-            <p><a href="index.html" class="logo">
-                    <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left">
-                </a>
-                <h1 class="website_title">Z-KOM</h1>
-        </div>
-        <p>
-            <nav class="menu">Menu
-                <ul>
-                    <li><a class="wide" href="index.html">Strona główna</a></li>
-                    <li><a class="wide" href="about.html">O firmie</a></li>
-                    <li><a class="wide" href="form.html">Formularz kontaktowy</a></li>
-                    <li><a class="wide" href="form_extra.html">Formularz szczegółowy</a></li>
-                    <li><a class="wide" href="information.html">Szczegółowe informacje</a></li>
-                </ul>
-            </nav>
-    </header>
+<?php include 'naglowek.php'; ?>
     <aside class="telephone">
         <h3>Telefon: </h3>
         <p>Zadzwoń - 123-345-567</p>
