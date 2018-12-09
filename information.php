@@ -1,3 +1,6 @@
+<?php
+include 'themes.php';
+?>
 <!DOCTYPE html>
 <html lang="pl-PL">
 
@@ -7,8 +10,8 @@
     <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe">
     <meta name="author" content="Rafał Lechowicz, Jan Żyrek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/index_style.css">
-    <title>Z-KOM - Centrum wiedzy</title>
+    <link rel="stylesheet" type="text/css" href="styles/<?php echo $styleChoice; ?>/index_style.css">
+      <title>Z-KOM - Centrum wiedzy</title>
     <script src="keysMousemoveScreen.js"></script>
     <style type="text/css">
         a {
@@ -139,12 +142,12 @@
                 <p id="demo" class="align_right display_inline"></p>
                 <h1 class="website_title">Z-KOM</h1>
                 <div class="menu align_right display_inline">Czcionki
-                    <ul>
+                            <ul>
                         <li>
                             <div class="cursor_pointer" onclick="changeFontStyle('Comic Sans MS')">Comic Sans MS</div>
                         </li>
                         <li>
-                            <div class="cursor_pointer" onclick="changeFontStyle('Arial')">Arial</div>
+                             <div class="cursor_pointer" onclick="changeFontStyle('Arial')">Arial</div>
                         </li>
                         <li>
                             <div class="cursor_pointer" onclick="changeFontStyle('Times New Roman')">Times New Roman</div>

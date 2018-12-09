@@ -1,4 +1,26 @@
-<?php include 'naglowek.php'; ?>
+<?php 
+if(isset($_GET['choice'])){
+    $choice = $_GET['choice'];
+    if($choice == "light" || $choice == "dark"){
+        setcookie("sitestyle", $choice, time()+60*60*12, "/");
+        header("location: index.php");
+        exit();
+    }
+}
+?>
+<?php include 'naglowek.php'; 
+
+?>
+ <div class="menu align_right display_inline">Style
+                    <ul>
+                        <li>
+<a href = "index.php?choice=light">Normalny</a>
+                          </li>
+                        <li>
+                        <a href = "index.php?choice=dark">Custom</a>
+                        </li>
+                    </ul>
+                </div>
     <section class="banner">
         <p class="text_banner"><strong>Najlepszy</strong> sklep internetowy z częściami komputerowymi! Sprawdź
             <a href="#opinions">opinie naszych klientów!</a></p>

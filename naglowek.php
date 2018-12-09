@@ -1,3 +1,4 @@
+<?php include 'themes.php';?>
 <!DOCTYPE html>
 <html lang="pl-PL">
 
@@ -7,7 +8,7 @@
     <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe">
     <meta name="author" content="Rafał Lechowicz, Jan Żyrek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/index_style.css">
+    <link rel="stylesheet" type="text/css" href="styles/<?php echo $styleChoice; ?>/index_style.css">
     <script>
         function submitButtonClicked(){
 alert("Dziękujemy za przesłanie opini");
@@ -26,13 +27,13 @@ alert("Dziękujemy za przesłanie opini");
                     <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left">
                 </a>
                 <h1 class="website_title" id="web_title"><a name="zkom">Z-KOM</a></h1>
-                <div class="color_box_red align_right display_inline" onmouseover="changeBackgroundColor('red')"
+             <!--   <div class="color_box_red align_right display_inline" onmouseover="changeBackgroundColor('red')"
                     onmouseout="resetToDefault()"></div>
                 <div class="color_box_green align_right display_inline" onmouseover="changeBackgroundColor('#4CAF50')"
                     onmouseout="resetToDefault()"></div>
                 <div class="color_box_blue align_right display_inline " onmouseover="changeBackgroundColor('blue')"
                     onmouseout="resetToDefault()"></div>
-
+-->
         </div>
         <p>
             <nav class="menu">Menu

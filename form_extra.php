@@ -1,4 +1,6 @@
-<?php include 'naglowek.php'; ?>
+<?php 
+include 'naglowek.php';
+?>
     <aside class="telephone">
         <h3>Telefon: </h3>
         <p>Zadzwoń - 123-345-567</p>
