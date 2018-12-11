@@ -176,8 +176,8 @@
       // RODO surname
       function words_to_stars($text) {
           $replace_word = preg_replace('/[^a-zA-Z0-9\']/',"Nazwisko: ",substr($text,0,1));
-          $replace_word .= str_repeat('*', strlen($text)-2);
-          $replace_word .= substr($text,strlen($text)-1,1);
+          $replace_word .= str_repeat('*', strlen($text));
+        //  $replace_word .= substr($text,strlen($text),1);
           return $replace_word;
       }
       echo words_to_stars($surname);

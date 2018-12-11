@@ -1,5 +1,8 @@
 <?php
 include 'themes.php';
+session_start();
+if (isset($_SESSION['zalogowany']))
+{
 ?>
 <!DOCTYPE html>
 <html lang="pl-PL">
@@ -166,7 +169,7 @@ include 'themes.php';
                   <li><a class="wide" href="form_extra.php">Formularz szczegółowy</a></li>
                   <li><a class="wide" href="information.php">Szczegółowe informacje</a></li>
                   <li><?php
-                              session_start();
+
 
                               if (!isset($_SESSION['zalogowany']))
                               {
@@ -336,3 +339,5 @@ include 'themes.php';
 </body>
 
 </html>
+<?php }
+echo header('Location: index.php'); ?>
