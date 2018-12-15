@@ -65,21 +65,23 @@
                $formerrors[ "phoneerror" ] = true;
                $iserror = true;
             } // end if
-            $link = mysqli_connect( "localhost", 
-                  "root", "root" );
-            if ( !$iserror )  
-            {
-               $query = "INSERT INTO users " .
-                  "( Login, Password, LastName, FirstName, Email, Phone) " .
-                  "VALUES ( '$login','$passwd','$lname', '$fname', '$email', 
-" . "'" . mysqli_real_escape_string( $link, $phone ) . ")";
+           
+            $mysql_host='localhost';
+            $mysql_user='psw';
+            $mysql_password='psw';
+            $mysql_db='phpmyadmin';
+            $db= mysqli_connect($mysql_host,$mysql_user,$mysql_password, $mysql_db) or die("Error " . mysqli_error($db));
+            if(!($db)) die("<p>could not connect</p>");
+            if(!($iserror)){
+            $result = $db->query("insert into users(login, passwd, fname, lname, email, phone) values('".$login."', '".$passwd."', '".$lname."', '".$fname."', '".$email."', " . 
+            "'" . mysqli_real_escape_string($db, $phone ) . 
+            "')"); // btw, this query is vulnerable to SQL injection
+            if(!$result){
+			print( "<p>Nie udało się dodać nowego rekordu do bazy danych!</p>" );
+			
+		}
 
-               // Connect to MySQL
-               if ( !( $database = mysqli_connect( "localhost", 
-                  "root", "root" ) ) )
-                  die( "<p>Could not connect to database</p>" );
-
-               mysqli_close( $database );
+               mysqli_close( $db );
 
                print( "<p class = 'head'>The following information has been 
                      saved in our database:</p>
@@ -92,9 +94,8 @@
                      entire database.</a></p>
                   </body></html>" );
                die(); // finish the page
-            } // end if 
-         } // end if 
-
+      }
+      }
          print( "<h1>Registration Form</h1>");
             if ( $iserror )                                              
          {                                                            
@@ -103,7 +104,7 @@
          } // end if
 
          print( "<!-- post form data to dynamicForm.php -->
-            <form method = 'post' action = 'registration.php'>
+            <form method = 'post' action = 'lol1.php'>
             <!-- create four text boxes for user input -->" );
          foreach ( $inputlist as $inputname => $inputalt )
          {
