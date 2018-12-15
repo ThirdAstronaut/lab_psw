@@ -1,0 +1,20 @@
+
+CREATE TABLE Users
+(
+   ID int NOT NULL AUTO_INCREMENT PRIMARY KEY);
+
+ALTER TABLE Users ADD login VARCHAR(60);
+ALTER TABLE Users ADD password VARCHAR(60);
+ALTER TABLE Users ADD fname VARCHAR(60);
+ALTER TABLE Users ADD lname VARCHAR(60);
+ALTER TABLE Users ADD email VARCHAR(60);
+ALTER TABLE Users ADD phone VARCHAR(15);
+
+INSERT INTO users (login, password, fname, lname, email, phone) VALUES ('admin', 'admin', 'John', 'Snow', 'aaa@asa.sa', '123456789');
+
+drop user root@localhost;
+flush privileges;
+create user root@localhost identified by 'root'
+
+GRANT select, insert, update, delete, create, drop, references, execute ON *.* TO root@localhost;
+
