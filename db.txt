@@ -10,7 +10,8 @@ ALTER TABLE Users ADD lname VARCHAR(60);
 ALTER TABLE Users ADD email VARCHAR(60);
 ALTER TABLE Users ADD phone VARCHAR(15);
 
-INSERT INTO users (login, password, fname, lname, email, phone) VALUES ('admin', 'admin', 'John', 'Snow', 'aaa@asa.sa', '123456789');
+INSERT INTO users (login, passwd, fname, lname, email, phone) VALUES ('admin', 'admin', 'John', 'Snow', 'aaa@asa.sa', '123456789');
 CREATE user 'psw'@'localhost' identified by 'psw';
 GRANT select, insert, update, delete, create, drop, references, execute ON *.* TO 'psw'@'localhost';
 
+CREATE UNIQUE INDEX uname_uniq ON users (login);

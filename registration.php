@@ -1,3 +1,5 @@
+<?php
+session_start(); ?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -13,54 +15,55 @@
    <body>
       <?php
          $login = isset($_POST[ "login" ]) ? $_POST[ "login" ] : "";
-         $passwd = isset($_POST[ "passwd" ]) ? $_POST[ "passwd" ] : "";   
+         $passwd = isset($_POST[ "passwd" ]) ? $_POST[ "passwd" ] : "";  
          $fname = isset($_POST[ "fname" ]) ? $_POST[ "fname" ] : "";
          $lname = isset($_POST[ "lname" ]) ? $_POST[ "lname" ] : "";
          $email = isset($_POST[ "email" ]) ? $_POST[ "email" ] : "";
          $phone = isset($_POST[ "phone" ]) ? $_POST[ "phone" ] : "";
    
          $iserror = false;
-         $formerrors = 
-            array( "loginerror" => false,"passwderror" => false,"fnameerror" => false, "lnameerror" => false, 
+         $formerrors =
+            array( "loginerror" => false,"passwderror" => false,"fnameerror" => false, "lnameerror" => false,
                "emailerror" => false, "phoneerror" => false );
-
+ 
          $inputlist = array(  "login" => "Login", "passwd" => "Password", "fname" => "First Name",
             "lname" => "Last Name", "email" => "Email",
             "phone" => "Phone" );
-
+ 
          if ( isset( $_POST["submit"] ) )
          {
-            if ( $login == "" )                   
+            if ( $login == "" && !(isset( $_SESSION['zalogowany'] )) )                  
             {
                $formerrors[ "loginerror" ] = true;
-               $iserror = true;                   
+               $iserror = true;                  
             } // end if
-            if ( $passwd == "" )                   
+ 
+            if ( $passwd == "" )                  
             {
                $formerrors[ "passwderror" ] = true;
-               $iserror = true;                   
+               $iserror = true;                  
             } // end if
-
-            if ( $fname == "" )                   
+ 
+            if ( $fname == "" )                  
             {
                $formerrors[ "fnameerror" ] = true;
-               $iserror = true;                   
+               $iserror = true;                  
             } // end if
-
-            if ( $lname == "" ) 
+ 
+            if ( $lname == "" )
             {
                $formerrors[ "lnameerror" ] = true;
                $iserror = true;
             } // end if
-
-            if ( $email == "" ) 
+ 
+            if ( $email == "" )
             {
                $formerrors[ "emailerror" ] = true;
                $iserror = true;
-            } // end if       
-
-            if ( !preg_match( '/^[0-9]{9,11}$/', 
-               $phone ) ) 
+            } // end if      
+ 
+            if ( !preg_match( '/^[0-9]{9,11}$/',
+               $phone ) )
             {
                $formerrors[ "phoneerror" ] = true;
                $iserror = true;
@@ -72,58 +75,91 @@
             $mysql_db='phpmyadmin';
             $db= mysqli_connect($mysql_host,$mysql_user,$mysql_password, $mysql_db) or die("Error " . mysqli_error($db));
             if(!($db)) die("<p>could not connect</p>");
-            if(!($iserror)){
-            $result = $db->query("insert into users(login, passwd, fname, lname, email, phone) values('".$login."', '".$passwd."', '".$lname."', '".$fname."', '".$email."', " . 
-            "'" . mysqli_real_escape_string($db, $phone ) . 
-            "')"); // btw, this query is vulnerable to SQL injection
-            if(!$result){
-			print( "<p>Nie udało się dodać nowego rekordu do bazy danych!</p>" );
-			
-		}
-
-               mysqli_close( $db );
-
-               print( "<p class = 'head'>The following information has been 
-                     saved in our database:</p>
-                  <p>Login: $login</p>
-                  <p>Password: $passwd</p>
-                  <p>Name: $fname $lname</p>
-                  <p>Email: $email</p>
-                  <p>Phone: $phone</p>
-                  <p><a href = 'formDatabase.php'>Click here to view 
-                     entire database.</a></p>
-                  </body></html>" );
-               die(); // finish the page
+ 
+            if(!($iserror) && !(isset( $_SESSION['zalogowany'] ))){
+            $sql="insert into users(login, passwd, fname, lname, email, phone) values('".$login."', '".$passwd."', '".$lname."', '".$fname."', '".$email."', " .
+            "'" . mysqli_real_escape_string($db, $phone ) .
+            "')"; // btw, this query is vulnerable to SQL injection
+      } elseif(!($iserror) && isset( $_SESSION['zalogowany'] )){
+            $sql ="update users set passwd = '".$passwd."', fname = '".$fname."', lname = '".$lname."',
+            email = '".$email."', phone = '". mysqli_real_escape_string($db, $phone ) ."' where login = '".$_SESSION['user']."'";
+           
       }
-      }
-         print( "<h1>Registration Form</h1>");
+      $result = mysqli_query($db, $sql);
+      mysqli_close( $db );
+      if(!$result){
+            print( "<p>An error occured. Probably your login is already taken</p>" );
+           
+      } else {
+ 
+       
+ 
+         print( "<p class = 'head'>The following information has been
+               changed in our database:</p>
+            <p>Login: $login</p>
+            <p>Password: $passwd</p>
+            <p>Name: $fname $lname</p>
+            <p>Email: $email</p>
+            <p>Phone: $phone</p>
+            <p><a href = 'diagnostic.php'>Click here to view
+               entire database.</a></p>
+            </body></html>" );
+         die(); // finish the page
+      }}
+      if(isset( $_SESSION['zalogowany'] )){
+      echo ' <h1>'."Hello ".$_SESSION['user'].'</h1>';
+ 
+         print( "<h1>Update form</h1>");
             if ( $iserror )                                              
          {                                                            
-            print( "<p class = 'error'>Fields with * need to be filled 
+            print( "<p class = 'error'>Fields with * need to be filled
                in properly.</p>" );
          } // end if
-
-         print( "<!-- post form data to dynamicForm.php -->
-            <form method = 'post' action = 'lol1.php'>
-            <!-- create four text boxes for user input -->" );
+ 
+         print( "<form method = 'post' action = 'registration.php'>" );
          foreach ( $inputlist as $inputname => $inputalt )
          {
+               if($inputalt === 'Login') {print( "<div><label>$inputalt:</label><input type = 'text'
+                  name = '$inputname' value = '" .$_SESSION['user']. "' disabled>" );
+            }else{
             print( "<div><label>$inputalt:</label><input type = 'text'
                name = '$inputname' value = '" . $$inputname . "'>" );
-            
-            if ( $formerrors[ ( $inputname )."error" ] == true ) 
+            }
+            if ( $formerrors[ ( $inputname )."error" ] == true )
                print( "<span class = 'error'>*</span>" );        
-            
+           
             print( "</div>" );
          } // end foreach
-
-         if ( $formerrors[ "phoneerror" ] ) 
-            print( "<p class = 'error'>Must be in the form 
+      } else {
+            print( "<h1>Registration Form</h1>");
+               if ( $iserror )                                              
+            {                                                            
+               print( "<p class = 'error'>Fields with * need to be filled
+                  in properly.</p>" );
+            } // end if
+           
+            print( "
+               <form method = 'post' action = 'registration.php'>
+              " );
+            foreach ( $inputlist as $inputname => $inputalt )
+            {
+               print( "<div><label>$inputalt:</label><input type = 'text'
+                  name = '$inputname' value = '" . $$inputname . "'>" );
+               
+               if ( $formerrors[ ( $inputname )."error" ] == true )
+                  print( "<span class = 'error'>*</span>" );        
+               
+               print( "</div>" );
+            } // end foreach
+                  }
+         if ( $formerrors[ "phoneerror" ] )
+            print( "<p class = 'error'>Must be in the form
                +4812345689" );
-          
+         
          $counter = 0;
-        
+       
          print( "<!-- create a submit button -->
             <p class = 'head'><input type = 'submit' name = 'submit'
-            value = 'Register'></p></form></body></html>" );
+            value = 'Send'></p></form></body></html>" );
+     
    ?><!-- end PHP script -->
