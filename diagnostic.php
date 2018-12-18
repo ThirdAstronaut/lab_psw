@@ -1,3 +1,7 @@
+<?php include 'db_connection.php';
+session_start();
+//echo session_id();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,11 +32,6 @@
 		<h2>Baza danych:</h2>
 	<?php
 
-$mysql_host='localhost';
-$mysql_user='psw';
-$mysql_password='psw';
-$mysql_db='phpmyadmin';
-$db= mysqli_connect($mysql_host,$mysql_user,$mysql_password, $mysql_db);
 
 	if(!($db))
 		die("<p>Nie można połączyć się z bazą danych </p></body></html>");
@@ -49,7 +48,7 @@ $db= mysqli_connect($mysql_host,$mysql_user,$mysql_password, $mysql_db);
 	}
     mysqli_close( $db );
 	
-	echo '<table><tr><td>ID</td><td>Login</td><td>Hasło</td><td>Nazwisko</td><td>Imie</td><td>Email</td><td>Telefon</td></tr>';
+	echo '<table><tr><td>ID</td><td>Login</td><td>Hasło</td><td>Imie</td><td>Nazwisko</td><td>Email</td><td>Telefon</td></tr>';
     while ( $row = mysqli_fetch_row( $result ) )
     {
 		echo '<tr>';
