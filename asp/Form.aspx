@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Formularz</title>
+    <link rel="stylesheet" type="text/css" href="index_style.css">
     <style type="text/css">
 
         .style1
@@ -18,6 +19,12 @@
     <div>
        <h1>
            Skontaktuj się z nami!</h1>
+    <asp:HyperLink ID="glownaLink" runat="server" 
+          NavigateUrl="~/Glowna.aspx" Visible="False">Strona główna</asp:HyperLink><br />
+    <asp:HyperLink ID="aboutLink" runat="server" 
+          NavigateUrl="~/About.aspx" Visible="False">O nas</asp:HyperLink><br />
+    <asp:HyperLink ID="formLink" runat="server" 
+          NavigateUrl="~/Form.aspx" Visible="False">Formularz</asp:HyperLink>
         <p>
             *wymagane pole</p>
        <table class="style1">
