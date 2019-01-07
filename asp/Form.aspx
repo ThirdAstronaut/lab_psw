@@ -5,32 +5,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Formularz</title>
-    <link rel="stylesheet" type="text/css" href="index_style.css">
+    <link rel="stylesheet" type="text/css" href="index_style.css"/>
     <style type="text/css">
-
-        .style1
+        .formTable
         {
-            width: 100%;
+            width: 50%;
+        }
+        .formTable td
+        {
+            border : none;
+        }
+        #submitButton
+        {
+text-align: center; 
+        }
+        .requiredFields
+        {
+         color : Red;   
         }
     </style>
 </head>
 <body>
+    <header class="main_menu">
+        <div style=" position: static;">
+            <asp:HyperLink ID="HyperLink1" runat="server" 
+          NavigateUrl="~/Glowna.aspx" Visible="true">
+                    <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left display_inline"/>
+                </asp:HyperLink><br />
+                <h1 class="website_title display_inline" id="web_title"><a name="zkom">Z-KOM</a></h1>
+        </div>
+        <p>
+            <asp:HyperLink ID="glownaLink" runat="server" 
+          NavigateUrl="~/Glowna.aspx" Visible="true">Strona główna</asp:HyperLink><br />
+    <asp:HyperLink ID="aboutLink" runat="server" 
+          NavigateUrl="~/About.aspx" Visible="true">O nas</asp:HyperLink><br />
+    <asp:HyperLink ID="formLink" runat="server" 
+          NavigateUrl="~/Form.aspx" Visible="true">Formularz</asp:HyperLink>
+    </header>
+        <h1> Skontaktuj się z nami!</h1>
     <form id="form1" runat="server">
     <div>
-       <h1>
-           Skontaktuj się z nami!</h1>
-    <asp:HyperLink ID="glownaLink" runat="server" 
-          NavigateUrl="~/Glowna.aspx" Visible="False">Strona główna</asp:HyperLink><br />
-    <asp:HyperLink ID="aboutLink" runat="server" 
-          NavigateUrl="~/About.aspx" Visible="False">O nas</asp:HyperLink><br />
-    <asp:HyperLink ID="formLink" runat="server" 
-          NavigateUrl="~/Form.aspx" Visible="False">Formularz</asp:HyperLink>
-        <p>
-            *wymagane pole</p>
-       <table class="style1">
+       
+        <p class="requiredFields">*wymagane pola</p>
+       <table class="formTable">
            <tr>
              <td valign="top">
-                 Imie:</td>
+                 *Imie:</td>
              <td valign="top">
                 <asp:TextBox ID="nameTextBox" runat="server"></asp:TextBox>
                 <br />
@@ -44,7 +64,7 @@
            </tr>
           <tr>
              <td valign="top">
-                 Nazwisko:</td>
+                 *Nazwisko:</td>
              <td valign="top">
                 <asp:TextBox ID="surnameTextBox" runat="server"></asp:TextBox>
                 <br />
@@ -58,7 +78,7 @@
           </tr>
            <tr>
              <td valign="top">
-                 Miesiąc urodzin:</td>
+                 *Miesiąc urodzin:</td>
              <td valign="top">
                 <asp:TextBox ID="monthTextBox" runat="server"></asp:TextBox>
                 <br />
@@ -72,10 +92,10 @@ Display ="Dynamic" ForeColor="Red"/>
            </tr>
           <tr>
              <td valign="top">
-                E-mail:</td>
+                *E-mail:</td>
              <td valign="top">
                 <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
-                &nbsp;e.g., email@domain.com<br />
+                &nbsp;np. email@abc.pl<br />
                 <asp:RequiredFieldValidator ID="emailRequiredFieldValidator" runat="server" 
                    ControlToValidate="emailTextBox" Display="Dynamic" 
                    ErrorMessage="Proszę podać swój adres email" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -88,7 +108,7 @@ Display ="Dynamic" ForeColor="Red"/>
           </tr>
           <tr>
              <td valign="top">
-                 Telefon:</td>
+                 *Telefon:</td>
              <td valign="top">
                 <asp:TextBox ID="phoneTextBox" runat="server"></asp:TextBox>
                 &nbsp;np. (+48)12345689<br />
@@ -103,9 +123,9 @@ Display ="Dynamic" ForeColor="Red"/>
           </tr>
            <tr>
              <td valign="top">
-                 Treść wiadomości:</td>
+                 *Treść wiadomości:</td>
              <td valign="top">
-                <asp:TextBox ID="contentTextBox" runat="server" Width="200" Height="200" Rows="10" TextMode="MultiLine"></asp:TextBox>
+                <asp:TextBox ID="contentTextBox" runat="server" Width="200" Height="150" Rows="10" TextMode="MultiLine"></asp:TextBox>
                 <br />
                 <asp:RequiredFieldValidator ID="contentRequiredFieldValidator" runat="server" 
                    ControlToValidate="contentTextBox" Display="Dynamic" 
@@ -114,7 +134,7 @@ Display ="Dynamic" ForeColor="Red"/>
            </tr>
            <tr>
              <td valign="top">
-                 Regulamin:</td>
+                 *Regulamin:</td>
              <td valign="top">
                 <br />
 
@@ -127,7 +147,7 @@ Display ="Dynamic" ForeColor="Red"/>
            </tr>
        </table>
        <p>
-          <asp:Button ID="submitButton" runat="server" Text="Submit" />
+          <asp:Button ID="submitButton" class="submit_form_main" runat="server" Text="Wyślij" />
        </p>
        <p>
           <asp:Label ID="outputLabel" runat="server" Visible="False"></asp:Label>

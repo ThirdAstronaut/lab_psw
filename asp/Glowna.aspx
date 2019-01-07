@@ -6,11 +6,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe.">
-    <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe">
-    <meta name="author" content="Rafał Lechowicz, Jan Żyrek">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="index_style.css">
+    <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe."/>
+    <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe"/>
+    <meta name="author" content="Rafał Lechowicz, Jan Żyrek"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="index_style.css"/>
     <script>
         function submitButtonClicked() {
             alert("Dziękujemy za przesłanie opini");
@@ -18,18 +18,18 @@
 
 </script>
     <!--<script src="dom.js"></script>-->
-    <script src="keysMousemoveScreen.js"></script>
+    <script type="application/javascript" src="../keysMousemoveScreen.js"></script>
     <title>Z-KOM - Internetowy sklep komputerowy</title>
 </head>
 
 <body>
     <header class="main_menu">
         <div style=" position: static;">
-            <p><asp:HyperLink ID="HyperLink1" runat="server" 
-          NavigateUrl="~/Glowna.aspx" Visible="False">
-                    <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left">
+            <asp:HyperLink ID="HyperLink1" runat="server" 
+          NavigateUrl="~/Glowna.aspx" Visible="true">
+                    <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left display_inline"/>
                 </asp:HyperLink><br />
-                <h1 class="website_title" id="web_title"><a name="zkom">Z-KOM</a></h1>
+                <h1 class="website_title display_inline" id="web_title"><a name="zkom">Z-KOM</a></h1>
                 <div class="color_box_red align_right display_inline" onmouseover="changeBackgroundColor('red')"
                     onmouseout="resetToDefault()"></div>
                 <div class="color_box_green align_right display_inline" onmouseover="changeBackgroundColor('#4CAF50')"
@@ -40,17 +40,17 @@
         </div>
         <p>
             <asp:HyperLink ID="glownaLink" runat="server" 
-          NavigateUrl="~/Glowna.aspx" Visible="False">Strona główna</asp:HyperLink><br />
+          NavigateUrl="~/Glowna.aspx" Visible="true">Strona główna</asp:HyperLink><br />
     <asp:HyperLink ID="aboutLink" runat="server" 
-          NavigateUrl="~/About.aspx" Visible="False">O nas</asp:HyperLink><br />
+          NavigateUrl="~/About.aspx" Visible="true">O nas</asp:HyperLink><br />
     <asp:HyperLink ID="formLink" runat="server" 
-          NavigateUrl="~/Form.aspx" Visible="False">Formularz</asp:HyperLink>
+          NavigateUrl="~/Form.aspx" Visible="true">Formularz</asp:HyperLink>
     </header>
     <section class="banner">
         <p class="text_banner"><strong>Najlepszy</strong> sklep internetowy z częściami komputerowymi! Sprawdź
             <a href="#opinions">opinie naszych klientów!</a></p>
     </section>
-    <br>
+    <br/>
     <section class="top_about">
         <table class="sale_table_index">
             <caption>TOP 3 promocji tygodnia</caption>
@@ -91,12 +91,12 @@
             <h2>Ankieta</h2>
             <label>Czy poleciłbyś nasz sklep swoim znajomym?</label>
             <p>Tak
-                <input name="survey" type="radio" value="tak" checked>
+                <input name="survey" type="radio" value="tak" checked/>
             </p>
             <p>Nie
-                <input name="survey" type="radio" value="nie">
+                <input name="survey" type="radio" value="nie"/>
             </p>
-            <input id="submit_survey_button" type="submit" value="Głosuj" onclick="submitButtonClicked()">
+            <input id="submit_survey_button" type="submit" value="Głosuj" onclick="submitButtonClicked()"/>
 
 
         </aside>
@@ -307,7 +307,7 @@
             <p>&copy;Copy rights reserved</p>
         </details>
     </footer>
-    <script>
+    <script type="application/javascript">
         var opinions = ["Marek Kowalski&#44; Opole: &quot;Zdecydowanie polecam, niskie ceny, szybka dostawa.&quot;",
             "Piotr Smuda&#44;\
 Warszawa: &quot;Nie znajdziecie lepszego&#44; 10 / 10 &quot;",

@@ -76,7 +76,8 @@ position: fixed;
 .banner {
   display: block;
   height: 500px;
-  background-image: url("../images/kot.jpg");
+   background-size: auto 500px ;
+  background-image: url("images/kot.jpg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -234,10 +235,10 @@ td {
 }
 
 #short_info_border {
-  -webkit-border-image: url("../images/border.jpg") 34% 34% repeat;
-  -moz-border-image: url("../images/border.jpg") 34% 34% repeat;
-  -o-border-image: url("../images/border.jpg") 34% 34% repeat;
-  border-image: url("../images/border.jpg") 34% 34% repeat;
+  -webkit-border-image: url("images/border.jpg") 34% 34% repeat;
+  -moz-border-image: url("images/border.jpg") 34% 34% repeat;
+  -o-border-image: url("images/border.jpg") 34% 34% repeat;
+  border-image: url("images/border.jpg") 34% 34% repeat;
 }
 
 .flex-container {

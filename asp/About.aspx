@@ -5,30 +5,32 @@
 <html lang="pl-PL">
 
 <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe.">
-        <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe">
-        <meta name="author" content="Rafał Lechowicz, Jan Żyrek">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="index_style.css">
+        <meta charset="UTF-8">
+        <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe."/>
+        <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe"/>
+        <meta name="author" content="Rafał Lechowicz, Jan Żyrek"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="index_style.css"/>
         <title>Z-KOM - O nas</title>
 </head>
 
 <body>
         <header class="main_menu">
-                <div style=" position: static;">
-                        <p><a href="index.html" class="logo">
-                                        <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left">
-                                </a>
-                                <h1 class="website_title">Z-KOM</h1>
-                </div>
-                <asp:HyperLink ID="glownaLink" runat="server" 
-          NavigateUrl="~/Glowna.aspx" Visible="False">Strona główna</asp:HyperLink><br />
+        <div style=" position: static;">
+            <asp:HyperLink ID="HyperLink1" runat="server" 
+          NavigateUrl="~/Glowna.aspx" Visible="true">
+                    <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left display_inline"/>
+                </asp:HyperLink><br />
+                <h1 class="website_title display_inline" id="web_title"><a name="zkom">Z-KOM</a></h1>
+        </div>
+        <p>
+            <asp:HyperLink ID="glownaLink" runat="server" 
+          NavigateUrl="~/Glowna.aspx" Visible="true">Strona główna</asp:HyperLink><br />
     <asp:HyperLink ID="aboutLink" runat="server" 
-          NavigateUrl="~/About.aspx" Visible="False">O nas</asp:HyperLink><br />
+          NavigateUrl="~/About.aspx" Visible="true">O nas</asp:HyperLink><br />
     <asp:HyperLink ID="formLink" runat="server" 
-          NavigateUrl="~/Form.aspx" Visible="False">Formularz</asp:HyperLink>
-        </header>
+          NavigateUrl="~/Form.aspx" Visible="true">Formularz</asp:HyperLink>
+    </header>
         <aside>
                 <div class="telephone">
                         <h3>Telefon: </h3>
@@ -39,7 +41,7 @@
                 <section class="short_info hover flex" id="short_info_border">
                         <h1>O firmie</h1>
                         <p>Wrocław ul. Nyska 1/1
-                                <br>21-012 Wrocław</p>
+                                <br/>21-012 Wrocław</p>
                         <p>Zadzwoń - 123-345-567</p>
                         <a href="mailto:xyz@xyz.xyz">Napisz maila</a>
                 </section>
@@ -65,15 +67,15 @@
                                 <meter value="0.6">60%</meter>
                         </mark>
                         <div id="interior_image">
-                                <img class="bottom" src="images/wnetrze1.jpg" width="50%" height="50%" />
-                                <img class="top" src="images/wnetrze2.jpg" width="50%" height="50%" />
+                                <img class="bottom" src="images/wnetrze1.jpg" width="50%" height="50%" alt="wnetrze"/>
+                                <img class="top" src="images/wnetrze2.jpg" width="50%" height="50%" alt="wnetrze"/>
                         </div>
                 </section>
         </section>
         <footer>
                 <p></p>
                 <details>
-                        <hr>
+                        <hr/>
                         <p>Znajdź nas na portalach społecznościowych!</p>
                         <div id="social_media_icons">
                                 <a href="http://www.facebook.com/">
