@@ -41,6 +41,10 @@ text-align: center;
           NavigateUrl="~/About.aspx" Visible="true">O nas</asp:HyperLink><br />
     <asp:HyperLink ID="formLink" runat="server" 
           NavigateUrl="~/Form.aspx" Visible="true">Formularz</asp:HyperLink>
+    <asp:HyperLink ID="listaProdLink" runat="server" 
+          NavigateUrl="~/ListaProduktow.aspx" Visible="true">Lista produktów</asp:HyperLink>
+    <asp:HyperLink ID="koszykLink" runat="server" 
+          NavigateUrl="~/Koszyk.aspx" Visible="true">Koszyk</asp:HyperLink>
     </header>
         <h1> Skontaktuj się z nami!</h1>
     <form id="form1" runat="server">

@@ -339,11 +339,12 @@ td {
 
 .submit_form_main,.reset_form_main {
   position: relative;
-  top: 1ex;
-  left: 35ex;
+  top: 0.5ex;
+  left: 1.5ex;
 }
 .submit_form_main {
   background-color: lime;
+    width: 144px;
 }
 .reset_form_main {
   background-color: magenta;
@@ -370,12 +371,55 @@ a:visited {
   color: rgb(255, 38, 0);
 }
 
-input[type="search"]:enabled {
+.categories {
   background: #b3faeb;
 }
 
-input[type="url"]:disabled {
+.lists {
   background: #f7d1d1cb;
+}
+
+.texts, .selects, .textareas {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+
+.submit_form_main:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 :target {
@@ -388,7 +432,7 @@ input:required {
   border-color: rgb(255, 0, 0);
 }
 
-#opinions {
+#opinions, .opinions {
 
   border: 2px solid blue;
   padding-top: 1px;
@@ -400,7 +444,7 @@ input:required {
   background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
 }
 
-#opinions:hover {
+#opinions:hover, .opinions:hover {
   background-image: radial-gradient(circle, red, white);
 }
 

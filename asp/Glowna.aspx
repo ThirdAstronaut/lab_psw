@@ -44,7 +44,11 @@
     <asp:HyperLink ID="aboutLink" runat="server" 
           NavigateUrl="~/About.aspx" Visible="true">O nas</asp:HyperLink><br />
     <asp:HyperLink ID="formLink" runat="server" 
-          NavigateUrl="~/Form.aspx" Visible="true">Formularz</asp:HyperLink>
+          NavigateUrl="~/Form.aspx" Visible="true">Formularz</asp:HyperLink><br />
+    <asp:HyperLink ID="listaProdLink" runat="server" 
+          NavigateUrl="~/ListaProduktow.aspx" Visible="true">Lista produktów</asp:HyperLink><br />
+    <asp:HyperLink ID="koszykLink" runat="server" 
+          NavigateUrl="~/Koszyk.aspx" Visible="true">Koszyk</asp:HyperLink><br />
     </header>
     <section class="banner">
         <p class="text_banner"><strong>Najlepszy</strong> sklep internetowy z częściami komputerowymi! Sprawdź
