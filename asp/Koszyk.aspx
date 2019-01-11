@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-25">Forma dostawy:</div>
         <div class="col-75">
-    <asp:RadioButtonList ID="formaDostawy" runat="Server">
+    <asp:RadioButtonList ID="formaDostawy" runat="Server" AutoPostBack="true" OnSelectedIndexChanged="formaDostawy_SelectedIndexChanged">
                             <asp:ListItem Text="Kurier"  Value="kurier"></asp:ListItem>
                             <asp:ListItem Text="Poczta" Value="poczta"></asp:ListItem>
                             <asp:ListItem Text="Odbiór osobisty" Value="osobiscie"></asp:ListItem>
@@ -32,10 +32,13 @@
     <div class="row">
         <div class="col-25">
     Zawartość koszyka: </div>
-    <!-- TODO info że pusty albo lista produktów -->
+   <asp:ListBox ID="itemsListBox" runat="server" CssClass="listBoxStyle">
+       </asp:ListBox>
+       <br />
+       <br />
     </div>
-
     <h2>Podsumowanie zamówienia:</h2>
+   
     <div class="row">
         <div class="col-25">Łączna cena produktów: </div>
           <div class="col-75"><asp:Label ID="cenaProduktow" runat="server" Visible="False"></asp:Label></div>
@@ -44,7 +47,7 @@
         <div class="col-25">Łączna wartość zamówienia: </div>
           <div class="col-75"><asp:Label ID="cenaZamowienia" runat="server" Visible="False"></asp:Label></div>
     </div>
-    <asp:Button ID="btnZamowienie" CssClass="submit_form_main" runat="Server" Text="Złóż zamówienie" OnClick="ActivateServerSideEvent" />
+    <asp:Button ID="btnZamowienie" CssClass="submit_form_main" runat="Server" Text="Złóż zamówienie" /><!--OnClick="ActivateServerSideEvent" -->
     </div>
     </form>
 </body>
