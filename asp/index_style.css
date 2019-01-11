@@ -574,3 +574,18 @@ screen and (max-width: 480px) {
   margin: 10px;
   border: 1px solid;
 }
+
+
+.formTable
+        {
+            width: 50%;
+        }
+        .formTable td
+        {
+            border : none;
+        }
+        
+        .requiredFields
+        {
+         color : Red;   
+        }
