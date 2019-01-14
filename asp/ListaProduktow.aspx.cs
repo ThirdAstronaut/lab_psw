@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,23 +11,25 @@ public partial class ListaProduktow : System.Web.UI.Page
     Hashtable hashtable = new Hashtable();
     Hashtable czesciHashtable = new Hashtable();
     Hashtable akcesoriaHashtable = new Hashtable();
-   // static List<string> selected = new List<string>();
+    // static List<string> selected = new List<string>();
 
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        SetVisibleFalse();
-        Fill_Hashtable();
-        Fill_UI(hashtable, laptopyList);
-        Fill_UI(czesciHashtable, czesciList);
-        Fill_UI(akcesoriaHashtable, akcesoriaList);
-       
-        
+        if (IsPostBack)
+        {
+            SetVisibleFalse();
+            Fill_Hashtable();
+            Fill_UI(hashtable, laptopyList);
+            Fill_UI(czesciHashtable, czesciList);
+            Fill_UI(akcesoriaHashtable, akcesoriaList);
+        }
+
     }
 
     private void Fill_Hashtable()
     {
-        
+
         hashtable.Add("HP Pavilion Power i5-8300H/8GB/240", 1000);
         hashtable.Add("ASUS VivoBook R520UA i3-8130U/8GB/256SSD/Win10", 2000);
         hashtable.Add("Lenovo Ideapad 330-15 i3-8130U/8GB/240/Win10 MX150", 3000);
@@ -46,7 +49,7 @@ public partial class ListaProduktow : System.Web.UI.Page
 
     private void Fill_UI(Hashtable table, CheckBoxList list)
     {
-        int i = 1;
+        int i = 0;
         //ListItem item in laptopyList.Items
         foreach (DictionaryEntry pair in table)
         {
@@ -69,17 +72,19 @@ public partial class ListaProduktow : System.Web.UI.Page
 
     }
 
+
     protected void AddToCart(object sender, System.EventArgs e)
     {
         int i = 0;
         foreach (ListItem item in laptopyList.Items)
         {
-            if (item.Selected) {
-               // selected.Add(item.Text);
+            if (item.Selected)
+            {
+                // selected.Add(item.Text);
 
-            Session.Add(i.ToString(), item.Text);
-            i++;
-        }
+                Session.Add(i.ToString(), item.Text);
+                i++;
+            }
         }
         foreach (ListItem item in akcesoriaList.Items)
         {
@@ -90,17 +95,17 @@ public partial class ListaProduktow : System.Web.UI.Page
                 Session.Add(i.ToString(), item.Text);
                 i++;
             }
-            }
+        }
         foreach (ListItem item in czesciList.Items)
         {
             if (item.Selected)
             {
-               // selected.Add(item.Text);
+                // selected.Add(item.Text);
                 Session.Add(i.ToString(), item.Text);
                 i++;
             }
         }
-        
+
         Response.Redirect("Koszyk.aspx");
     }
 

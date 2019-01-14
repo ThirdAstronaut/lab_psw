@@ -47,7 +47,7 @@
         <div class="col-25">Łączna wartość zamówienia: </div>
           <div class="col-75"><asp:Label ID="cenaZamowienia" runat="server" Visible="False"></asp:Label></div>
     </div>
-    <asp:Button ID="btnZamowienie" CssClass="submit_form_main" runat="Server" Text="Złóż zamówienie" /><!--OnClick="ActivateServerSideEvent" -->
+    <asp:Button ID="btnZamowienie" CssClass="submit_form_main" runat="Server" Text="Złóż zamówienie" OnClick="ClearBasket" Enabled=false/>
     </div>
     </form>
 </body>
