@@ -39,9 +39,9 @@ public partial class Koszyk : System.Web.UI.Page
         }
     }
 
-    private int countProductsValue()
+    private decimal countProductsValue()
     {
-        int value = 0;
+        decimal value = 0;
         if (Session.Count != 0)
         {
             foreach (string keyName in Session.Keys)
@@ -49,7 +49,7 @@ public partial class Koszyk : System.Web.UI.Page
                 int startPos = ((string)Session[keyName]).LastIndexOf("  | ") + "  | ".Length;
                 int length = ((string)Session[keyName]).IndexOf("zł") - startPos;
                 string sub = ((string)Session[keyName]).Substring(startPos, length);
-                value += Int32.Parse(sub);
+                value += Decimal.Parse(sub);
             }
 
         }
@@ -65,7 +65,7 @@ public partial class Koszyk : System.Web.UI.Page
 
     protected void formaDostawy_SelectedIndexChanged(object sender, System.EventArgs e)
     {
-        int orderValue = countProductsValue();
+        decimal orderValue = countProductsValue();
         String listName = formaDostawy.SelectedItem.Value;
 
         switch (listName)
@@ -88,7 +88,7 @@ public partial class Koszyk : System.Web.UI.Page
 
     }
 
-    private void displayOrderValue(int orderValue)
+    private void displayOrderValue(decimal orderValue)
     {
         cenaZamowienia.Visible = true;
         cenaZamowienia.Text = orderValue.ToString() + "zł";
