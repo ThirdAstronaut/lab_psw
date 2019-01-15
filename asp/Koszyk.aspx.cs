@@ -9,31 +9,34 @@ using System.Collections;
 
 public partial class Koszyk : System.Web.UI.Page
 {
-    // read Session items and populate ListBox with recommendations
     protected void Page_Init(object sender, EventArgs e)
     {
-        if (Session.Count != 0)
+        if (!IsPostBack)
         {
-            foreach (string keyName in Session.Keys)
-                itemsListBox.Items.Add(keyName +
-                   ". " + Session[keyName]);
-        } // end if
-    } // end method Page_Init
+            if (Session.Count != 0)
+            {
+                foreach (string keyName in Session.Keys)
+                    itemsListBox.Items.Add(keyName +
+                       ". " + Session[keyName]);
+            }
+        }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
-
-        // determine whether Session contains any information
-        if (Session.Count != 0)
+        if (!IsPostBack)
         {
-            displayProductsValue();
+            if (Session.Count != 0)
+            {
+                displayProductsValue();
+            }
+            else
+            {
+                itemsListBox.Items.Clear();
+                itemsListBox.Visible = false;
+                cenaProduktow.Text = "";
+                cenaZamowienia.Text = "";
+            }
         }
-        else
-        {
-            itemsListBox.Items.Clear();
-            itemsListBox.Visible = false;
-            cenaProduktow.Text = "";
-            cenaZamowienia.Text = "";
-        } // end else
     }
 
     private int countProductsValue()
@@ -43,8 +46,6 @@ public partial class Koszyk : System.Web.UI.Page
         {
             foreach (string keyName in Session.Keys)
             {
-                //var words = ((string)Session[keyName]).Split('|');
-
                 int startPos = ((string)Session[keyName]).LastIndexOf("  | ") + "  | ".Length;
                 int length = ((string)Session[keyName]).IndexOf("zł") - startPos;
                 string sub = ((string)Session[keyName]).Substring(startPos, length);
@@ -60,8 +61,6 @@ public partial class Koszyk : System.Web.UI.Page
         cenaProduktow.Visible = true;
         cenaProduktow.Text = countProductsValue().ToString() + "zł";
     }
-
-
 
 
     protected void formaDostawy_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -97,12 +96,11 @@ public partial class Koszyk : System.Web.UI.Page
 
     protected void ClearBasket(object sender, System.EventArgs e)
     {
-        /* recommendationsLabel.Text = "No Recommendations";
-         booksListBox.Items.Clear();
-         booksListBox.Visible = false;
-
-         // modify languageLink because no language was selected
-         languageLink.Text = "Click here to choose a language";*/
+        
+        if (Request.Cookies["selected"] != null)
+        {
+            Response.Cookies["selected"].Expires = DateTime.Now.AddDays(-1);
+        }
 
         Session.Abandon();
         Response.Redirect("~/Koszyk.aspx");

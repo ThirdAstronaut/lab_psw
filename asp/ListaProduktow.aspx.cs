@@ -11,21 +11,31 @@ public partial class ListaProduktow : System.Web.UI.Page
     Hashtable hashtable = new Hashtable();
     Hashtable czesciHashtable = new Hashtable();
     Hashtable akcesoriaHashtable = new Hashtable();
-    // static List<string> selected = new List<string>();
 
 
-    protected void Page_Load(object sender, EventArgs e)
+    protected void Page_Init(object sender, EventArgs e)
     {
-        if (IsPostBack)
+        if (!IsPostBack)
         {
             SetVisibleFalse();
             Fill_Hashtable();
             Fill_UI(hashtable, laptopyList);
             Fill_UI(czesciHashtable, czesciList);
             Fill_UI(akcesoriaHashtable, akcesoriaList);
+            RetriveSelected();
         }
-
     }
+       
+    protected void Page_Load(object sender, EventArgs e)
+    {
+         if (IsPostBack)
+    {
+        // Load from cookie.
+        SetVisibleFalse();
+        
+}
+    }
+
 
     private void Fill_Hashtable()
     {
@@ -72,13 +82,22 @@ public partial class ListaProduktow : System.Web.UI.Page
 
     }
 
-
+    private void checkCookies() 
+    { 
+        if (Request.Cookies["selected"] != null)
+        {
+            Response.Cookies["selected"].Expires = DateTime.Now.AddDays(-1);
+        }
+    }
     protected void AddToCart(object sender, System.EventArgs e)
     {
-        int i = 0;
+        Session.Contents.RemoveAll();
+        checkCookies();
+
+        int i = 1;
         foreach (ListItem item in laptopyList.Items)
         {
-            if (item.Selected)
+            if (item.Selected && item.Text != Session[(i+1).ToString()])
             {
                 // selected.Add(item.Text);
 
@@ -106,15 +125,65 @@ public partial class ListaProduktow : System.Web.UI.Page
             }
         }
 
+       SaveCookies();
+
+
+
         Response.Redirect("Koszyk.aspx");
     }
+    private void SaveCookies(){
 
-    /*protected void submitButton_Click( object sender, EventArgs e )
-   {
-      // if the user made a selection
-      if ( languageList.SelectedItem != null ) 
-         // add name/value pair to Session
-         Session.Add( languageList.SelectedItem.Text,
-            languageList.SelectedItem.Value );
-   } // end method submitButton_Click*/
+        /*CheckBoxList[] list = new CheckBoxList[3];
+                    list[0] = laptopyList;
+                    list[1] = akcesoriaList;
+                    list[2] = czesciList;
+                    ListItem item = null;
+                    for(int k = 0; k < 3; k++){
+                        item = list[k].Items.FindByValue(key);
+                    }*/
+
+        CheckBoxList[] list = new CheckBoxList[3];
+                    list[0] = laptopyList;
+                    list[1] = akcesoriaList;
+                    list[2] = czesciList;
+        
+        HttpCookie cookie = new HttpCookie("selected");
+        cookie.Expires = DateTime.Now.AddDays(1);
+        for(int k = 0; k < 3; k++){
+        foreach (ListItem item in list[k].Items)
+        {
+            if (item.Selected)
+            {
+                cookie.Values.Add(item.Value, item.Text);
+            }
+        }
+        }
+
+        Response.Cookies.Add(cookie);
+    }
+
+ private void RetriveSelected(){
+        HttpCookie cookie = Request.Cookies["selected"];
+        CheckBoxList[] list = new CheckBoxList[3];
+        list[0] = laptopyList;
+        list[1] = akcesoriaList;
+        list[2] = czesciList;
+            if (cookie != null && cookie.Values != null)
+            {
+                foreach (string key in cookie.Values.Keys)
+                {
+                   
+                    ListItem item = null;
+                    for(int k = 0; k < 3; k++){
+                        item = list[k].Items.FindByValue(key);
+                        if (item != null)
+                        {
+                            item.Selected = true;
+                        }
+                    }
+                    
+                   
+                }
+        }
+    }
 }
