@@ -8,11 +8,6 @@
      <link rel="stylesheet" type="text/css" href="index_style.css"/>
 </head>
 <body>
-<h2>Dziękujemy za złożenie zamówienia. Jesteśmy zachwyceni faktem, iż dokonano zakupów w naszym sklepie! Łączna wartość zamówienia wynosi: </h2>
- <p>
-          <asp:Label ID="cenaZamowienia" runat="server" Visible="False"></asp:Label>
-       </p>
-<h2>Zapraszamy do korzystania danej z naszych usług!</h2>
 <asp:HyperLink ID="glownaLink" runat="server" 
           NavigateUrl="~/Glowna.aspx" Visible="true">Strona główna</asp:HyperLink><br />
     <asp:HyperLink ID="aboutLink" runat="server" 
@@ -21,5 +16,10 @@
           NavigateUrl="~/Form.aspx" Visible="true">Formularz</asp:HyperLink><br />
     <asp:HyperLink ID="listaProdLink" runat="server" 
           NavigateUrl="~/ListaProduktow.aspx" Visible="true">Lista produktów</asp:HyperLink><br />
+<h3>Dziękujemy za złożenie zamówienia. Jesteśmy zachwyceni faktem, iż dokonano zakupów w naszym sklepie! Łączna wartość zamówienia wynosi: </h3>
+                <asp:Label ID="cenaZamowienia" runat="server" Visible="False" Font-Size="Large" Font-Bold=true></asp:Label>
+       <br />
+<h2>Zapraszamy do korzystania danej z naszych usług!</h2>
+
 </body>
 </html>

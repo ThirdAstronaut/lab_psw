@@ -96,14 +96,9 @@ public partial class Koszyk : System.Web.UI.Page
 
     protected void ClearBasket(object sender, System.EventArgs e)
     {
-        
-        if (Request.Cookies["selected"] != null)
-        {
-            Response.Cookies["selected"].Expires = DateTime.Now.AddDays(-1);
-        }
 
-        Session.Abandon();
-        Response.Redirect("~/Koszyk.aspx");
+        Session.Add("cenaZamowienia", cenaZamowienia.Text);
+        Response.Redirect("~/PotwierdzenieZamowienia.aspx");
 
     }
 }
