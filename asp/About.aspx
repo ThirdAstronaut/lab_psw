@@ -1,40 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="About.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.master" CodeFile="About.aspx.cs" Inherits="_Default" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html lang="pl-PL">
-
-<head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe."/>
-        <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe"/>
-        <meta name="author" content="Rafał Lechowicz, Jan Żyrek"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" type="text/css" href="index_style.css"/>
-        <title>Z-KOM - O nas</title>
-</head>
-
-<body>
-        <header class="main_menu">
-        <div style=" position: static;">
-            <asp:HyperLink ID="HyperLink1" runat="server" 
-          NavigateUrl="~/Glowna.aspx" Visible="true">
-                    <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left display_inline"/>
-                </asp:HyperLink><br />
-                <h1 class="website_title display_inline" id="web_title"><a name="zkom">Z-KOM</a></h1>
-        </div>
-        <p>
-            <asp:HyperLink ID="glownaLink" runat="server" 
-          NavigateUrl="~/Glowna.aspx" Visible="true">Strona główna</asp:HyperLink><br />
-    <asp:HyperLink ID="aboutLink" runat="server" 
-          NavigateUrl="~/About.aspx" Visible="true">O nas</asp:HyperLink><br />
-    <asp:HyperLink ID="formLink" runat="server" 
-          NavigateUrl="~/Form.aspx" Visible="true">Formularz</asp:HyperLink>
-    <asp:HyperLink ID="listaProdLink" runat="server" 
-          NavigateUrl="~/ListaProduktow.aspx" Visible="true">Lista produktów</asp:HyperLink>
-    <asp:HyperLink ID="koszykLink" runat="server" 
-          NavigateUrl="~/Koszyk.aspx" Visible="true">Koszyk</asp:HyperLink>
-    </header>
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+</asp:Content>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
         <aside>
                 <div class="telephone">
                         <h3>Telefon: </h3>
@@ -76,28 +44,5 @@
                         </div>
                 </section>
         </section>
-        <footer>
-                <p></p>
-                <details>
-                        <hr/>
-                        <p>Znajdź nas na portalach społecznościowych!</p>
-                        <div id="social_media_icons">
-                                <a href="http://www.facebook.com/">
-                                        <img id="facebook" class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png"
-                                                alt="Fanpage sklepu na facebooku" />
-                                </a>
-                                <a href="http://www.instagram.com/">
-                                        <img id="instagram" class="icon" src="images/Instagram_icon.png" alt="Fanpage sklepu na instagramie" />
-                                </a>
-                                <a href="http://www.twitter.com/">
-                                        <img id="twitter" class="icon" src="images/twitter_icon.png" alt="Fanpage sklepu na twitterze" />
-                                </a>
-                        </div>
-                        <summary>Copyright 2018</summary>
-                        <p>&copy;Copy rights reserved</p>
-                </details>
-        </footer>
-</body>
-
-</html>
+</asp:Content>
 

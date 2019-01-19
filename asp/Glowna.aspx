@@ -1,55 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Glowna.aspx.cs" Inherits="Glowna" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    CodeFile="Glowna.aspx.cs" Inherits="_Glowna" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html lang="pl-PL">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Sklep internetowy sprzedający części do komputerów i składający spersonalizowane zestawy kompterowe."/>
-    <meta name="keywords" content="z-kom, zkom, z_kom, z kom, komputer, sklep, internet, sklep internetowy, zakupy sprzętu, części komputerowe, części do komputera, karta graficzna, dysk, pamięć RAM, płyta główna, jaki komputer kupić, najtańszy sklep komputerowy, składnie komputera, zestawy komputerowe"/>
-    <meta name="author" content="Rafał Lechowicz, Jan Żyrek"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="index_style.css"/>
-    <script>
-        function submitButtonClicked() {
-            alert("Dziękujemy za przesłanie opini");
-        };
-
-</script>
-    <!--<script src="dom.js"></script>-->
-    <script type="application/javascript" src="../keysMousemoveScreen.js"></script>
-    <title>Z-KOM - Internetowy sklep komputerowy</title>
-</head>
-
-<body>
-    <header class="main_menu">
-        <div style=" position: static;">
-            <asp:HyperLink ID="HyperLink1" runat="server" 
-          NavigateUrl="~/Glowna.aspx" Visible="true">
-                    <img src="images/computer_logo_resized.png" alt="Symbol komputera" class="align_left display_inline"/>
-                </asp:HyperLink><br />
-                <h1 class="website_title display_inline" id="web_title"><a name="zkom">Z-KOM</a></h1>
-                <div class="color_box_red align_right display_inline" onmouseover="changeBackgroundColor('red')"
-                    onmouseout="resetToDefault()"></div>
-                <div class="color_box_green align_right display_inline" onmouseover="changeBackgroundColor('#4CAF50')"
-                    onmouseout="resetToDefault()"></div>
-                <div class="color_box_blue align_right display_inline " onmouseover="changeBackgroundColor('blue')"
-                    onmouseout="resetToDefault()"></div>
-
-        </div>
-        <p>
-            <asp:HyperLink ID="glownaLink" runat="server" 
-          NavigateUrl="~/Glowna.aspx" Visible="true">Strona główna</asp:HyperLink><br />
-    <asp:HyperLink ID="aboutLink" runat="server" 
-          NavigateUrl="~/About.aspx" Visible="true">O nas</asp:HyperLink><br />
-    <asp:HyperLink ID="formLink" runat="server" 
-          NavigateUrl="~/Form.aspx" Visible="true">Formularz</asp:HyperLink><br />
-    <asp:HyperLink ID="listaProdLink" runat="server" 
-          NavigateUrl="~/ListaProduktow.aspx" Visible="true">Lista produktów</asp:HyperLink><br />
-    <asp:HyperLink ID="koszykLink" runat="server" 
-          NavigateUrl="~/Koszyk.aspx" Visible="true">Koszyk</asp:HyperLink><br />
-    </header>
+    
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+</asp:Content>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    <h2>
+        Welcome to Our Password-Protected Book Information Site</h2>
     <section class="banner">
         <p class="text_banner"><strong>Najlepszy</strong> sklep internetowy z częściami komputerowymi! Sprawdź
             <a href="#opinions">opinie naszych klientów!</a></p>
@@ -287,106 +244,11 @@
             <a href="https://www.pcworld.pl/">https://www.pcworld.pl/</a>
         </section>
     </section>
-    <footer>
-        <p></p>
-        <details>
-            <hr>
-            <div id="links">
-                __
-            </div>
-            <p>Znajdź nas na portalach społecznościowych!</p>
-            <div id="social_media_icons">
-                <a href="http://www.facebook.com/">
-                    <img id="facebook" class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png"
-                        alt="Fanpage sklepu na facebooku" />
-                </a>
-                <a href="http://www.instagram.com/">
-                    <img id="instagram" class="icon" src="images/Instagram_icon.png" alt="Fanpage sklepu na instagramie" />
-                </a>
-                <a href="http://www.twitter.com/">
-                    <img id="twitter" class="icon" src="images/twitter_icon.png" alt="Fanpage sklepu na twitterze" />
-                </a>
-            </div>
-            <summary>Copyright 2018</summary>
-            <p>&copy;Copy rights reserved</p>
-        </details>
-    </footer>
-    <script type="application/javascript">
-        var opinions = ["Marek Kowalski&#44; Opole: &quot;Zdecydowanie polecam, niskie ceny, szybka dostawa.&quot;",
-            "Piotr Smuda&#44;\
-Warszawa: &quot;Nie znajdziecie lepszego&#44; 10 / 10 &quot;",
-            "Piotr Nowak, Warszawa: &quot;Kolejne zakupy również udane&#44;\
-rzetelna obsługa polecam &quot;",
-            "John Smith&#44; Wrocław: &quot;Very good!&quot;",
-            "Jan Kowal&#44; Warszawa: &quot;Najlepszy sklep!&quot;"
-        ];
-        var text = "<ul>";
-        var i;
-        var set = new Set()
-        do {
-            set.add(Math.floor((Math.random() * opinions.length)))
-        } while (set.size < 3)
-        document.writeln(set[0])
-        for (let item of set.values()) {
-            text += "<li>" + opinions[item] + "</li>";
-        }
-        text += "</ul>"
-
-        document.getElementById("random_opinions").innerHTML = text;
-    </script>
-    <script type="text/javascript">
-        var defaultTheme = 'white';
-        /*
-        function start() {
-        var inputColor = prompt("Enter a color name for the " +
-        "background of this page", "");
-        changeBackgroundColor(inputColor);
-        defaultTheme = inputColor;
-
-        var inputColor = prompt("Enter a color name for the " +
-        "text Z-KOM", "");
-        changeWebTitleColor(inputColor);
-        } // end function start
-
-        function changeBackgroundColor(inputColor) {
-        document.body.setAttribute("style",
-        "background-color: " + inputColor);
-
-        }
-
-        function changeWebTitleColor(inputColor) {
-        var el = document.getElementById("web_title");
-        el.style.color = inputColor;
-        }
-        window.addEventListener("load", start, false);
-        window.addEventListener("load", start, false);
-        */
-        var counter = 0;
-
-        function KeyPress(e) {
-            var evtobj = window.event ? event : e
-            if (evtobj.ctrlKey && evtobj.altKey && evtobj.shiftKey) {
-                if (counter % 2 == 0) {
-                    changeBackgroundColor('#808080');
-                    defaultTheme = '#808080';
-
-                    counter++;
-                } else {
-                    defaultTheme = 'white';
-                    resetToDefault();
+    
 
 
-                    counter++;
-                }
-            }
-        }
 
-        function resetToDefault() {
-            changeBackgroundColor(defaultTheme);
-        }
-        document.onkeydown = KeyPress;
-    </script>
-</body>
 
-</html>
-
+</asp:Content>
+    
+    
