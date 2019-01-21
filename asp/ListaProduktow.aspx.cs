@@ -8,6 +8,41 @@ using System.Web.UI.WebControls;
 using System.Collections;
 public partial class ListaProduktow : System.Web.UI.Page
 {
+    // data context queried by data sources 
+    //ListaProduktowDataContext database = new BooksDataContext();
+
+    // specify the Select query that creates a combined first and last name
+    protected void authorsLinqDataSource_Selecting(object sender,
+       LinqDataSourceSelectEventArgs e)
+    {
+       /* e.Result =
+           from author in database.Authors
+           select new
+           {
+               Name = author.FirstName + " " + author.LastName,
+               author.AuthorID
+           }; */
+    } // end method authorsLinqDataSource_Selecting
+
+    // specify the Select query that gets the specified author's books
+    protected void titlesLinqDataSource_Selecting(object sender,
+       LinqDataSourceSelectEventArgs e)
+    {
+      /*  e.Result =
+           from book in database.AuthorISBNs
+           where book.AuthorID ==
+              Convert.ToInt32(authorsDropDownList.SelectedValue)
+           select book.Title; */
+    } // end method titlesLinqDataSource_Selecting
+
+    // refresh the GridView when a different author is selected
+    protected void authorsDropDownList_SelectedIndexChanged(
+       object sender, EventArgs e)
+    {
+        laptopyGridView.DataBind(); // update the GridView
+    } // end method authorsDropDownList_SelectedIndexChanged
+    
+    /*
     Hashtable laptopsHashtable = new Hashtable();
     Hashtable partsHashtable = new Hashtable();
     Hashtable accessoriesHashtable = new Hashtable();
@@ -160,5 +195,5 @@ public partial class ListaProduktow : System.Web.UI.Page
                    
                 }
         }
-    }
+    } */
 }
