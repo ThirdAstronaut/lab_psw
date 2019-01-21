@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeFile="Glowna.aspx.cs" Inherits="_Glowna" %>
+    CodeFile="Glowna.aspx.cs" Inherits="Glowna" %>
 
     
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
